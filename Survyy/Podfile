@@ -7,6 +7,7 @@ target 'Survyy' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Firebase/Messaging'
 
   target 'SurvyyTests' do
     inherit! :search_paths

@@ -10,7 +10,7 @@ import UIKit
 
 let kTextfieldMargin : CGFloat = 10.0
 
-class SVLoginViewController: UIViewController {
+class SVLoginViewController: UIViewController, UITextFieldDelegate {
     
     let persistenceManager : SVPersistenceManager! = SVPersistenceManager.shared
 
@@ -37,6 +37,9 @@ class SVLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.email.delegate = self
+        self.password.delegate = self
+        self.repeatPassword.delegate = self
         self.signInButton.isEnabled = false
     }
 
@@ -81,6 +84,8 @@ class SVLoginViewController: UIViewController {
             self.repeatPasswordTopConstraint.constant = self.password.frame.height + (kTextfieldMargin * 2)
             UIView.animate(withDuration: 0.2, animations: {
                 self.view.layoutIfNeeded()
+                self.repeatPassword.placeholder = "Repeat password"
+                self.password.alpha = 1
             })
         }
     }
@@ -89,11 +94,38 @@ class SVLoginViewController: UIViewController {
         self.signInButton.isEnabled = !self.email.text!.isEmpty && !self.repeatPassword.text!.isEmpty
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.email {
+            if self.repeatPasswordTopConstraint.constant > kTextfieldMargin {
+                // Sign up
+                self.password.becomeFirstResponder()
+            }
+            else {
+                // Sign in
+                self.repeatPassword.becomeFirstResponder()
+            }
+        }
+        else if textField == self.password {
+            self.repeatPassword.becomeFirstResponder()
+        }
+        else {
+            if self.repeatPasswordTopConstraint.constant > kTextfieldMargin {
+                self.signUp((Any).self)
+            } else {
+                self.signIn((Any).self)
+            }
+        }
+        
+        return true
+    }
+    
     func dismissKeyboard() {
         view.endEditing(true)
         self.repeatPasswordTopConstraint.constant = kTextfieldMargin
         UIView.animate(withDuration: 0.2, animations: {
             self.view.layoutIfNeeded()
+            self.repeatPassword.placeholder = "Password"
+            self.password.alpha = 0
         })
     }
 }

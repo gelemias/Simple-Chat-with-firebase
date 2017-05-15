@@ -19,6 +19,8 @@ class SVHomeViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOut))
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         self.updateNameTextField()
     }
@@ -34,7 +36,7 @@ class SVHomeViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @IBAction func logOut(_ sender: Any) {
+    func logOut() {
         SVLoginManager.shared.signOut()
         self.navigationController?.popViewController(animated: false)
     }

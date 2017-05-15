@@ -44,7 +44,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0p2-Ds-YgD">
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0p2-Ds-YgD">
                                 <rect key="frame" x="36" y="190" width="303" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gRo-nJ-wYH"/>
@@ -147,27 +147,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRU-MO-dT4">
-                                <rect key="frame" x="161.5" y="617" width="52" height="30"/>
-                                <state key="normal" title="Log out"/>
-                                <connections>
-                                    <action selector="logOut:" destination="dHy-tr-frI" eventType="touchUpInside" id="G1R-F1-ddQ"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vW7-5t-MI2">
-                                <rect key="frame" x="20" y="40" width="335" height="0.0"/>
+                                <rect key="frame" x="20" y="84" width="335" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rnt-cF-DHD">
-                                <rect key="frame" x="36" y="60" width="303" height="30"/>
+                                <rect key="frame" x="36" y="104" width="303" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p5m-ko-gMr">
-                                <rect key="frame" x="305" y="90" width="34" height="30"/>
+                                <rect key="frame" x="305" y="134" width="34" height="30"/>
                                 <state key="normal" title="send"/>
                                 <connections>
                                     <action selector="send:" destination="dHy-tr-frI" eventType="touchUpInside" id="3ei-Qn-mSi"/>
@@ -179,8 +172,6 @@
                             <constraint firstItem="rnt-cF-DHD" firstAttribute="top" secondItem="vW7-5t-MI2" secondAttribute="bottom" constant="20" id="11Y-wB-SBR"/>
                             <constraint firstItem="p5m-ko-gMr" firstAttribute="top" secondItem="rnt-cF-DHD" secondAttribute="bottom" id="8ac-gy-0aW"/>
                             <constraint firstItem="p5m-ko-gMr" firstAttribute="trailing" secondItem="rnt-cF-DHD" secondAttribute="trailing" id="HWb-xK-cR1"/>
-                            <constraint firstItem="91f-3F-Aiv" firstAttribute="top" secondItem="QRU-MO-dT4" secondAttribute="bottom" constant="20" id="Lpx-m8-EPv"/>
-                            <constraint firstItem="QRU-MO-dT4" firstAttribute="centerX" secondItem="tuY-9R-giw" secondAttribute="centerX" id="N2f-10-a9x"/>
                             <constraint firstAttribute="trailing" secondItem="vW7-5t-MI2" secondAttribute="trailing" constant="20" id="WOo-ch-qGh"/>
                             <constraint firstItem="vW7-5t-MI2" firstAttribute="leading" secondItem="tuY-9R-giw" secondAttribute="leading" constant="20" id="WlJ-MW-TOn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rnt-cF-DHD" secondAttribute="trailing" constant="20" id="hN2-pc-AgX"/>
@@ -200,7 +191,7 @@
         <!--Navigation Controller-->
         <scene sceneID="dTN-T7-1L1">
             <objects>
-                <navigationController navigationBarHidden="YES" id="Osz-jq-Uqa" sceneMemberID="viewController">
+                <navigationController id="Osz-jq-Uqa" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DsV-Wz-gju">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

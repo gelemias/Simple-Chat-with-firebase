@@ -7,8 +7,12 @@
 //
 
 import UIKit
-import FirebaseAuth
 import FirebaseDatabase
+
+struct User {
+    let username : String
+    let avatar : String
+}
 
 class SVChatListTableViewController: UITableViewController {
 
@@ -16,7 +20,7 @@ class SVChatListTableViewController: UITableViewController {
     private var channelRefHandle: FIRDatabaseHandle?
 
     let cellReuseIdentifier = "cell"
-    var listOfUsers : [String] = []
+    var listOfUsers : [User] = []
     
     deinit {
         ref.removeObserver(withHandle: channelRefHandle!)
@@ -25,40 +29,26 @@ class SVChatListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.dataSource = self
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOut))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editAccount))
         
-        self.updateNameTextField()
-        
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-        tableView.dataSource = self
+        self.title = SVLoginManager.shared.username
         
         channelRefHandle = self.ref.observe(.value, with: { (snapshot) -> Void in
             // Get user value
+            var dbList : [User] = []
             for (_, v) in snapshot.value as! NSDictionary {
                 if v is NSDictionary {
-                    
                     let dic = v as! NSDictionary
-                    let str = dic.value(forKey: "username") as! String
-                    
-                    if (!self.listOfUsers.contains(str)) {
-                        self.listOfUsers.append(str)
-                    }
+                    let username = dic.value(forKey: "username") as! String
+                    let avatar = dic.value(forKey: "avatar") as! String
+                    dbList.append(User.init(username: username, avatar: avatar))
                 }
-                
-                self.listOfUsers = self.listOfUsers.sorted { $0 < $1 }
-                self.tableView.reloadData()
             }
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-    }
-    
-    func updateNameTextField() {
-        self.ref.child("users").child(FIRAuth.auth()!.currentUser!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get user value
-            let value = snapshot.value as? NSDictionary
-            self.title = value?["username"] as? String ?? FIRAuth.auth()?.currentUser?.email
+            
+            self.listOfUsers = dbList.sorted { $0.username < $1.username }
+            self.tableView.reloadData()
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -80,21 +70,32 @@ class SVChatListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell!
+        var cell : UITableViewCell? = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier)
+
+        if cell == nil {
+            cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: cellReuseIdentifier)
+        }
     
-        cell.textLabel?.text = self.listOfUsers[indexPath.row]
+        cell!.textLabel?.text = self.listOfUsers[indexPath.row].username
+        cell!.detailTextLabel?.text = "This conversation is Empty"
+        cell!.detailTextLabel?.textColor = UIColor.lightGray
+
+        cell!.imageView?.image = UIImage.init(named: self.listOfUsers[indexPath.row].avatar)
+        cell!.imageView?.contentMode = .scaleAspectFit
+        cell!.imageView?.transform = CGAffineTransform.init(scaleX: 0.3, y: 0.3)
+
+        cell!.accessoryType = .disclosureIndicator
         
-        return cell
+        return cell!
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
+// MARK: - TableViewDelegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-//    @IBAction func send(_ sender: Any) {
-//        self.ref.child("users").child(FIRAuth.auth()!.currentUser!.uid).setValue(["username": nameTextfield.text])
-//        
-//        self.updateNameTextField()
-//    }
-//
 }

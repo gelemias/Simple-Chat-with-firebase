@@ -14,36 +14,31 @@ class SVLoginViewController: UIViewController, UITextFieldDelegate {
     
     let persistenceManager : SVPersistenceManager! = SVPersistenceManager.shared
 
+    @IBOutlet weak var username: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var repeatPassword: UITextField!
     
     @IBOutlet weak var signUpButton: UIButton!
-    @IBOutlet weak var signInButton: UIButton!
 
-    @IBOutlet weak var repeatPasswordTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var rePasswordTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var emailTopConstraint: NSLayoutConstraint!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self, selector:#selector(textFieldDidChanged), name: .UITextFieldTextDidChange, object: nil)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.username.delegate = self
         self.email.delegate = self
         self.password.delegate = self
         self.repeatPassword.delegate = self
-        self.signInButton.isEnabled = false
     }
 
-    @IBAction func signIn(_ sender: Any) {
+    func signIn() {
         SVLoginManager.shared.signIn(withEmail: self.email.text!, password: self.repeatPassword.text!, completion: { (user, error) in
             if (error != nil) {
                 let alert = UIAlertController(title: "Sign up failed", message: error?.localizedDescription, preferredStyle: .alert)
@@ -57,75 +52,74 @@ class SVLoginViewController: UIViewController, UITextFieldDelegate {
         })
     }
     
-    @IBAction func signUp(_ sender: Any) {
-        if self.repeatPasswordTopConstraint.constant > kTextfieldMargin {
-            if (self.repeatPassword.text == self.password.text) {
-                SVLoginManager.shared.signUp(withEmail: self.email.text!, password: self.repeatPassword.text!, completion: { (user, error) in
-                    if (error != nil) {
-                        let alert = UIAlertController(title: "Sign up failed", message: error?.localizedDescription, preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
-                    }
-                    else {
-                        print("signup - SUCCESS")
-                        self.dismiss(animated: true, completion: nil)
-                    }
-                })
-            } else {
-                let alert = UIAlertController(title: "Password mismatch", message: "Please type the same password", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: {
-                    self.password.text = ""
-                    self.repeatPassword.text = ""
-                })
-            }
-        }
-        else {
-            self.repeatPasswordTopConstraint.constant = self.password.frame.height + (kTextfieldMargin * 2)
-            UIView.animate(withDuration: 0.2, animations: {
-                self.view.layoutIfNeeded()
-                self.repeatPassword.placeholder = "Repeat password"
-                self.password.alpha = 1
+    func createAcount() {
+        if (self.repeatPassword.text == self.password.text) {
+            SVLoginManager.shared.signUp(self.username.text!, withEmail: self.email.text!, password: self.repeatPassword.text!, completion: { (user, error) in
+                if (error != nil) {
+                    let alert = UIAlertController(title: "Sign up failed", message: error?.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                else {
+                    print("signup - SUCCESS")
+                    self.dismiss(animated: true, completion: nil)
+                }
+            })
+        } else {
+            let alert = UIAlertController(title: "Password mismatch", message: "Please type the same password", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: {
+                self.password.text = ""
+                self.repeatPassword.text = ""
             })
         }
     }
     
-    func textFieldDidChanged() {
-        self.signInButton.isEnabled = !self.email.text!.isEmpty && !self.repeatPassword.text!.isEmpty
+    @IBAction func signUp(_ sender: Any) {
+        self.emailTopConstraint.constant = self.username.frame.height + (kTextfieldMargin * 2)
+        self.rePasswordTopConstraint.constant = self.password.frame.height + (kTextfieldMargin * 2)
+        UIView.animate(withDuration: 0.2, animations: {
+            self.view.layoutIfNeeded()
+            self.repeatPassword.placeholder = "Repeat password"
+            self.password.alpha = 1
+            self.username.alpha = 1
+        })
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == self.email {
-            if self.repeatPasswordTopConstraint.constant > kTextfieldMargin {
-                // Sign up
-                self.password.becomeFirstResponder()
-            }
-            else {
-                // Sign in
-                self.repeatPassword.becomeFirstResponder()
-            }
-        }
-        else if textField == self.password {
-            self.repeatPassword.becomeFirstResponder()
-        }
-        else {
-            if self.repeatPasswordTopConstraint.constant > kTextfieldMargin {
-                self.signUp((Any).self)
-            } else {
-                self.signIn((Any).self)
+        
+        var proceed : Bool = true
+        for subview in view.subviews {
+            if subview is UITextField {
+                let textField : UITextField = subview as! UITextField
+                if textField.alpha == 1 && textField.text!.isEmpty {
+                    textField.becomeFirstResponder()
+                    proceed = false
+                }
             }
         }
         
-        return true
+        if proceed {
+            if self.username.alpha == 1 {
+                self.createAcount()
+            } else {
+                self.signIn()
+            }
+        }
+
+        return false
     }
     
     func dismissKeyboard() {
         view.endEditing(true)
-        self.repeatPasswordTopConstraint.constant = kTextfieldMargin
+        self.rePasswordTopConstraint.constant = kTextfieldMargin
+        self.emailTopConstraint.constant = kTextfieldMargin
+
         UIView.animate(withDuration: 0.2, animations: {
             self.view.layoutIfNeeded()
             self.repeatPassword.placeholder = "Password"
             self.password.alpha = 0
+            self.username.alpha = 0
         })
     }
 }

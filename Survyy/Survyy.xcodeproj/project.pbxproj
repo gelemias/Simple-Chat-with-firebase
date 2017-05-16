@@ -16,7 +16,7 @@
 		C71B54381EC44A5400B8BA6C /* SVPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B54371EC44A5400B8BA6C /* SVPersistenceManager.swift */; };
 		C71B543C1EC44B2A00B8BA6C /* SVPersistenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B543B1EC44B2A00B8BA6C /* SVPersistenceModel.swift */; };
 		C787311D1EC58697005D6288 /* SVIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C787311C1EC58697005D6288 /* SVIntroViewController.swift */; };
-		C787311F1EC586DF005D6288 /* SVHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C787311E1EC586DF005D6288 /* SVHomeViewController.swift */; };
+		C787311F1EC586DF005D6288 /* SVChatListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C787311E1EC586DF005D6288 /* SVChatListTableViewController.swift */; };
 		C78731231EC5882D005D6288 /* SVRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78731221EC5882D005D6288 /* SVRootViewController.swift */; };
 		C78731251EC58E5D005D6288 /* SVLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78731241EC58E5D005D6288 /* SVLoginManager.swift */; };
 		C7E515B91EC994AD00762212 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7E515B81EC994AD00762212 /* UserNotifications.framework */; };
@@ -55,7 +55,7 @@
 		C71B54371EC44A5400B8BA6C /* SVPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVPersistenceManager.swift; sourceTree = "<group>"; };
 		C71B543B1EC44B2A00B8BA6C /* SVPersistenceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVPersistenceModel.swift; sourceTree = "<group>"; };
 		C787311C1EC58697005D6288 /* SVIntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVIntroViewController.swift; sourceTree = "<group>"; };
-		C787311E1EC586DF005D6288 /* SVHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVHomeViewController.swift; sourceTree = "<group>"; };
+		C787311E1EC586DF005D6288 /* SVChatListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVChatListTableViewController.swift; sourceTree = "<group>"; };
 		C78731221EC5882D005D6288 /* SVRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVRootViewController.swift; sourceTree = "<group>"; };
 		C78731241EC58E5D005D6288 /* SVLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVLoginManager.swift; sourceTree = "<group>"; };
 		C7E515B81EC994AD00762212 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
@@ -114,7 +114,7 @@
 				C71B54181EC442A400B8BA6C /* SVLoginViewController.swift */,
 				C78731221EC5882D005D6288 /* SVRootViewController.swift */,
 				C787311C1EC58697005D6288 /* SVIntroViewController.swift */,
-				C787311E1EC586DF005D6288 /* SVHomeViewController.swift */,
+				C787311E1EC586DF005D6288 /* SVChatListTableViewController.swift */,
 				C71B541A1EC442A400B8BA6C /* Main.storyboard */,
 				C71B541D1EC442A400B8BA6C /* Assets.xcassets */,
 				C71B541F1EC442A400B8BA6C /* LaunchScreen.storyboard */,
@@ -384,7 +384,7 @@
 				C71B54381EC44A5400B8BA6C /* SVPersistenceManager.swift in Sources */,
 				C71B54191EC442A400B8BA6C /* SVLoginViewController.swift in Sources */,
 				C78731231EC5882D005D6288 /* SVRootViewController.swift in Sources */,
-				C787311F1EC586DF005D6288 /* SVHomeViewController.swift in Sources */,
+				C787311F1EC586DF005D6288 /* SVChatListTableViewController.swift in Sources */,
 				C78731251EC58E5D005D6288 /* SVLoginManager.swift in Sources */,
 				C71B543C1EC44B2A00B8BA6C /* SVPersistenceModel.swift in Sources */,
 				C71B54171EC442A400B8BA6C /* AppDelegate.swift in Sources */,

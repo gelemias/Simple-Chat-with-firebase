@@ -8,10 +8,13 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class SVLoginManager: NSObject {
     
     static let shared = SVLoginManager()
+    var ref: FIRDatabaseReference! = FIRDatabase.database().reference()
+
     private override init() { }
     
     public var username : String? {
@@ -30,8 +33,17 @@ class SVLoginManager: NSObject {
         return FIRAuth.auth()?.currentUser != nil
     }
     
-    public func signUp(withEmail email: String, password: String, completion: FirebaseAuth.FIRAuthResultCallback? = nil) {
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: completion)
+    public func signUp(_ username: String, withEmail email: String, password: String, completion: FirebaseAuth.FIRAuthResultCallback? = nil) {
+        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
+            if error == nil {
+                self.ref.child("users").child(FIRAuth.auth()!.currentUser!.uid).setValue(["username": username,
+                                                                                          "email"   : email])
+            }
+            
+            if completion != nil {
+                completion!(user, error)
+            }
+        })
     }
     
     public func signIn(withEmail email: String, password: String, completion: FirebaseAuth.FIRAuthResultCallback? = nil) {

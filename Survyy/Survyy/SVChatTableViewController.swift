@@ -1,5 +1,5 @@
 //
-//  SVChatListTableViewController.swift
+//  SVChatTableViewController.swift
 //  Survyy
 //
 //  Created by Guillermo Delgado on 12/05/2017.
@@ -7,14 +7,17 @@
 //
 
 import UIKit
-import FirebaseDatabase
+import Firebase
 
 struct User {
     let username : String
     let avatar : String
+    let email : String
 }
 
-class SVChatListTableViewController: UITableViewController {
+class SVChatTableViewController: UITableViewController {
+    
+    let kShowRoomSegue = "ShowRoomSegue"
 
     private lazy var ref: FIRDatabaseReference! = FIRDatabase.database().reference().child("users")
     private var channelRefHandle: FIRDatabaseHandle?
@@ -35,6 +38,10 @@ class SVChatListTableViewController: UITableViewController {
         
         self.title = SVLoginManager.shared.username
         
+        self.observeListOfUsers()
+    }
+    
+    func observeListOfUsers() {
         channelRefHandle = self.ref.observe(.value, with: { (snapshot) -> Void in
             // Get user value
             var dbList : [User] = []
@@ -43,7 +50,11 @@ class SVChatListTableViewController: UITableViewController {
                     let dic = v as! NSDictionary
                     let username = dic.value(forKey: "username") as! String
                     let avatar = dic.value(forKey: "avatar") as! String
-                    dbList.append(User.init(username: username, avatar: avatar))
+                    let email = dic.value(forKey: "email") as! String
+                    
+                    if (SVLoginManager.shared.email != dic.value(forKey: "email") as! String) {
+                        dbList.append(User.init(username: username, avatar: avatar, email: email))
+                    }
                 }
             }
             
@@ -97,5 +108,15 @@ class SVChatListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: kShowRoomSegue, sender: User.init(username: self.listOfUsers[indexPath.row].username,
+                                                                            avatar: self.listOfUsers[indexPath.row].avatar,
+                                                                            email: self.listOfUsers[indexPath.row].email))
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == kShowRoomSegue  {
+            let roomVC : SVRoomViewController = segue.destination as! SVRoomViewController
+            roomVC.attendee = sender as? User
+        }
     }
 }

@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseDatabase
+import Firebase
+import SVProgressHUD
 
 class SVLoginManager: NSObject {
     
@@ -47,27 +47,47 @@ class SVLoginManager: NSObject {
     }
     
     public func signUp(_ username: String, withEmail email: String, password: String, completion: FirebaseAuth.FIRAuthResultCallback? = nil) {
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
-            if error == nil {
-                let rndAvatar : Int = Int(arc4random_uniform(UInt32(7)))
-                self.ref.child("users").child(FIRAuth.auth()!.currentUser!.uid).setValue(["username": username.capitalized,
-                                                                                          "email"   : email,
-                                                                                          "avatar"  : "avatar" + String(rndAvatar)])
-                if user != nil {
-                    let changeRequest = user!.profileChangeRequest()
-                    changeRequest.displayName = username.capitalized
-                    changeRequest.commitChanges(completion: nil)
+        
+        SVProgressHUD.show()
+        DispatchQueue.global(qos: .background).async {
+            FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
+                if error == nil {
+                    let rndAvatar : Int = Int(arc4random_uniform(UInt32(7)))
+                    self.ref.child("users").child(FIRAuth.auth()!.currentUser!.uid).setValue(["username": username.capitalized,
+                                                                                              "email"   : email,
+                                                                                              "avatar"  : "avatar" + String(rndAvatar)])
+                    if user != nil {
+                        let changeRequest = user!.profileChangeRequest()
+                        changeRequest.displayName = username.capitalized
+                        changeRequest.commitChanges(completion: nil)
+                    }
                 }
-            }
-            
-            if completion != nil {
-                completion!(user, error)
-            }
-        })
+                
+                if completion != nil {
+                    completion!(user, error)
+                    
+                    DispatchQueue.main.async {
+                        SVProgressHUD.dismiss()
+                    }
+                }
+            })
+        }
     }
     
     public func signIn(withEmail email: String, password: String, completion: FirebaseAuth.FIRAuthResultCallback? = nil) {
-        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: completion)
+        
+        SVProgressHUD.show()
+        DispatchQueue.global(qos: .background).async {
+            FIRAuth.auth()?.signIn(withEmail: email, password: password, completion:  { (user, error) in
+                if completion != nil {
+                    completion!(user, error)
+                    
+                    DispatchQueue.main.async {
+                        SVProgressHUD.dismiss()
+                    }
+                }
+            })
+        }
     }
     
     public func signOut() {

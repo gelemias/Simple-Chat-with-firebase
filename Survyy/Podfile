@@ -9,6 +9,7 @@ target 'Survyy' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'JSQMessagesViewController'
+  pod 'SVProgressHUD'
 
   target 'SurvyyTests' do
     inherit! :search_paths

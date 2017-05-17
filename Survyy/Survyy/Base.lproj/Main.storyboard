@@ -138,10 +138,10 @@
             </objects>
             <point key="canvasLocation" x="1145" y="24"/>
         </scene>
-        <!--Chat List Table View Controller-->
+        <!--Chat Table View Controller-->
         <scene sceneID="bvM-oN-r7H">
             <objects>
-                <tableViewController id="n4A-E0-cXq" customClass="SVChatListTableViewController" customModule="Survyy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="n4A-E0-cXq" customClass="SVChatTableViewController" customModule="Survyy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="byN-i1-pkQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -151,10 +151,31 @@
                             <outlet property="delegate" destination="n4A-E0-cXq" id="YIe-of-4hR"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="hTN-NZ-06g" kind="show" identifier="ShowRoomSegue" id="hzA-mk-auk"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="82r-EM-rNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1886" y="24"/>
+        </scene>
+        <!--Room View Controller-->
+        <scene sceneID="FzF-cE-XrU">
+            <objects>
+                <viewController id="hTN-NZ-06g" customClass="SVRoomViewController" customModule="Survyy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hOQ-V8-tnV"/>
+                        <viewControllerLayoutGuide type="bottom" id="QmY-TR-Z9a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cwS-Ni-xXb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="137-zF-Qad" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2708" y="24"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dTN-T7-1L1">

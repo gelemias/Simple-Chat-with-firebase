@@ -19,14 +19,18 @@ class SVChatTableViewController: UITableViewController {
     
     let kShowRoomSegue = "ShowRoomSegue"
 
-    private lazy var ref: FIRDatabaseReference! = FIRDatabase.database().reference().child("users")
-    private var channelRefHandle: FIRDatabaseHandle?
+    private lazy var usersRef: FIRDatabaseReference! = FIRDatabase.database().reference().child("users")
+    private var usersChannelRefHandle: FIRDatabaseHandle?
+    private lazy var chatRef: FIRDatabaseReference! = FIRDatabase.database().reference().child("chatroom")
+    private var chatChannelRefHandle: FIRDatabaseHandle?
 
     let cellReuseIdentifier = "cell"
     var listOfUsers : [User] = []
-    
+    var lastMessages : Dictionary<String, String> = [:]
+
     deinit {
-        ref.removeObserver(withHandle: channelRefHandle!)
+        usersRef.removeObserver(withHandle: usersChannelRefHandle!)
+        chatRef.removeObserver(withHandle: chatChannelRefHandle!)
     }
     
     override func viewDidLoad() {
@@ -42,7 +46,7 @@ class SVChatTableViewController: UITableViewController {
     }
     
     func observeListOfUsers() {
-        channelRefHandle = self.ref.observe(.childAdded, with: { (snapshot) -> Void in
+        self.usersChannelRefHandle = self.usersRef.observe(.childAdded, with: { (snapshot) -> Void in
             // Get user value
             if snapshot.value is NSDictionary {
                 
@@ -57,10 +61,28 @@ class SVChatTableViewController: UITableViewController {
             }
             
             self.listOfUsers = self.listOfUsers.sorted { $0.username < $1.username }
-            self.tableView.reloadData()
+            self.observeLastMessages()
         }) { (error) in
             print(error.localizedDescription)
         }
+    }
+    
+    private func observeLastMessages()  {
+        self.chatChannelRefHandle = chatRef.observe(.value, with: { (snapshot) -> Void in
+            if snapshot.value is NSDictionary {
+                let v = snapshot.value as! NSDictionary
+                
+                for i in 0..<self.listOfUsers.count {
+                    let str = self.sortedString(self.listOfUsers[i].username + " & " + self.title!)
+                    if (v.allKeys as! Array<String>).contains(str) {
+                        let lastMessage : String = ((v.value(forKey: str) as! NSDictionary).allValues.last as! NSDictionary).allValues.last as! String
+                        self.lastMessages[self.listOfUsers[i].username] = lastMessage
+                    }
+                }
+            }
+            
+            self.tableView.reloadData()
+        })
     }
     
     func logOut() {
@@ -70,6 +92,11 @@ class SVChatTableViewController: UITableViewController {
     
     func editAccount() {
         
+    }
+    
+    func sortedString(_ str : String) -> String {
+        let charArray = Array(str.characters)
+        return String(charArray.sorted())
     }
     
 // MARK: - TableViewDataSource
@@ -86,9 +113,15 @@ class SVChatTableViewController: UITableViewController {
         }
     
         cell!.textLabel?.text = self.listOfUsers[indexPath.row].username
-        cell!.detailTextLabel?.text = "This conversation is Empty"
-        cell!.detailTextLabel?.textColor = UIColor.lightGray
-
+        
+        if self.lastMessages.keys.contains(self.listOfUsers[indexPath.row].username) {
+            cell!.detailTextLabel?.text = self.lastMessages[self.listOfUsers[indexPath.row].username]
+            cell!.detailTextLabel?.textColor = UIColor.gray
+        } else {
+            cell!.detailTextLabel?.text = "This conversation is empty"
+            cell!.detailTextLabel?.textColor = UIColor.lightGray
+        }
+        
         cell!.imageView?.image = UIImage.init(named: self.listOfUsers[indexPath.row].avatar)
         cell!.imageView?.contentMode = .scaleAspectFit
         cell!.imageView?.transform = CGAffineTransform.init(scaleX: 0.3, y: 0.3)

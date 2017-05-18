@@ -42,23 +42,21 @@ class SVChatTableViewController: UITableViewController {
     }
     
     func observeListOfUsers() {
-        channelRefHandle = self.ref.observe(.value, with: { (snapshot) -> Void in
+        channelRefHandle = self.ref.observe(.childAdded, with: { (snapshot) -> Void in
             // Get user value
-            var dbList : [User] = []
-            for (_, v) in snapshot.value as! NSDictionary {
-                if v is NSDictionary {
-                    let dic = v as! NSDictionary
-                    let username = dic.value(forKey: "username") as! String
-                    let avatar = dic.value(forKey: "avatar") as! String
-                    let email = dic.value(forKey: "email") as! String
-                    
-                    if (SVLoginManager.shared.email != dic.value(forKey: "email") as! String) {
-                        dbList.append(User.init(username: username, avatar: avatar, email: email))
-                    }
+            if snapshot.value is NSDictionary {
+                
+                let dic = snapshot.value as! NSDictionary
+                let username = dic.value(forKey: "username") as! String
+                let avatar = dic.value(forKey: "avatar") as! String
+                let email = dic.value(forKey: "email") as! String
+                
+                if (SVLoginManager.shared.email != dic.value(forKey: "email") as! String) {
+                    self.listOfUsers.append(User.init(username: username, avatar: avatar, email: email))
                 }
             }
             
-            self.listOfUsers = dbList.sorted { $0.username < $1.username }
+            self.listOfUsers = self.listOfUsers.sorted { $0.username < $1.username }
             self.tableView.reloadData()
         }) { (error) in
             print(error.localizedDescription)

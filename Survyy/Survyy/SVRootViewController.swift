@@ -11,7 +11,6 @@ import UIKit
 class SVRootViewController: UIViewController {
 
     let kShowLoginSegue = "ShowLoginSegue"
-    let kShowIntroSegue = "ShowIntroSegue"
     let kShowHomeSegue = "ShowHomeSegue"
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,11 +28,7 @@ class SVRootViewController: UIViewController {
 
         if !SVLoginManager.shared.isUserAuthorized() {
             self.performSegue(withIdentifier: kShowLoginSegue, sender: self)
-        }
-        else if SVPersistenceManager.shared.isNewVersion() {
-            self.performSegue(withIdentifier: kShowIntroSegue, sender: self)
-        }
-        else {
+        } else {
             self.performSegue(withIdentifier: kShowHomeSegue, sender: self)
         }
     }

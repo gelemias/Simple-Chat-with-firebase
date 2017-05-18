@@ -13,9 +13,6 @@
 		C71B541E1EC442A400B8BA6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C71B541D1EC442A400B8BA6C /* Assets.xcassets */; };
 		C71B54211EC442A400B8BA6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71B541F1EC442A400B8BA6C /* LaunchScreen.storyboard */; };
 		C71B542C1EC442A400B8BA6C /* SurvyyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B542B1EC442A400B8BA6C /* SurvyyTests.swift */; };
-		C71B54381EC44A5400B8BA6C /* SVPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B54371EC44A5400B8BA6C /* SVPersistenceManager.swift */; };
-		C71B543C1EC44B2A00B8BA6C /* SVPersistenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B543B1EC44B2A00B8BA6C /* SVPersistenceModel.swift */; };
-		C787311D1EC58697005D6288 /* SVIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C787311C1EC58697005D6288 /* SVIntroViewController.swift */; };
 		C787311F1EC586DF005D6288 /* SVChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C787311E1EC586DF005D6288 /* SVChatTableViewController.swift */; };
 		C78731231EC5882D005D6288 /* SVRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78731221EC5882D005D6288 /* SVRootViewController.swift */; };
 		C78731251EC58E5D005D6288 /* SVLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78731241EC58E5D005D6288 /* SVLoginManager.swift */; };
@@ -53,9 +50,6 @@
 		C71B54271EC442A400B8BA6C /* SurvyyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurvyyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71B542B1EC442A400B8BA6C /* SurvyyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurvyyTests.swift; sourceTree = "<group>"; };
 		C71B542D1EC442A400B8BA6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C71B54371EC44A5400B8BA6C /* SVPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVPersistenceManager.swift; sourceTree = "<group>"; };
-		C71B543B1EC44B2A00B8BA6C /* SVPersistenceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVPersistenceModel.swift; sourceTree = "<group>"; };
-		C787311C1EC58697005D6288 /* SVIntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVIntroViewController.swift; sourceTree = "<group>"; };
 		C787311E1EC586DF005D6288 /* SVChatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVChatTableViewController.swift; sourceTree = "<group>"; };
 		C78731221EC5882D005D6288 /* SVRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVRootViewController.swift; sourceTree = "<group>"; };
 		C78731241EC58E5D005D6288 /* SVLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVLoginManager.swift; sourceTree = "<group>"; };
@@ -110,13 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				C7E515BA1EC996EE00762212 /* Survyy.entitlements */,
-				C71B543A1EC44B0200B8BA6C /* Model */,
 				C71B54361EC4497D00B8BA6C /* Managers */,
 				C71B54161EC442A400B8BA6C /* AppDelegate.swift */,
 				C71B54181EC442A400B8BA6C /* SVLoginViewController.swift */,
 				C78731221EC5882D005D6288 /* SVRootViewController.swift */,
 				C7F340F91ECC332A0051F678 /* SVRoomViewController.swift */,
-				C787311C1EC58697005D6288 /* SVIntroViewController.swift */,
 				C787311E1EC586DF005D6288 /* SVChatTableViewController.swift */,
 				C71B541A1EC442A400B8BA6C /* Main.storyboard */,
 				C71B541D1EC442A400B8BA6C /* Assets.xcassets */,
@@ -139,18 +131,9 @@
 		C71B54361EC4497D00B8BA6C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				C71B54371EC44A5400B8BA6C /* SVPersistenceManager.swift */,
 				C78731241EC58E5D005D6288 /* SVLoginManager.swift */,
 			);
 			path = Managers;
-			sourceTree = "<group>";
-		};
-		C71B543A1EC44B0200B8BA6C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				C71B543B1EC44B2A00B8BA6C /* SVPersistenceModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		D8303A8334F9D998BB1AB744 /* Frameworks */ = {
@@ -384,15 +367,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C71B54381EC44A5400B8BA6C /* SVPersistenceManager.swift in Sources */,
 				C71B54191EC442A400B8BA6C /* SVLoginViewController.swift in Sources */,
 				C78731231EC5882D005D6288 /* SVRootViewController.swift in Sources */,
 				C7F340FA1ECC332A0051F678 /* SVRoomViewController.swift in Sources */,
 				C787311F1EC586DF005D6288 /* SVChatTableViewController.swift in Sources */,
 				C78731251EC58E5D005D6288 /* SVLoginManager.swift in Sources */,
-				C71B543C1EC44B2A00B8BA6C /* SVPersistenceModel.swift in Sources */,
 				C71B54171EC442A400B8BA6C /* AppDelegate.swift in Sources */,
-				C787311D1EC58697005D6288 /* SVIntroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

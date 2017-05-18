@@ -12,8 +12,6 @@ let kTextfieldMargin : CGFloat = 10.0
 
 class SVLoginViewController: UIViewController, UITextFieldDelegate {
     
-    let persistenceManager : SVPersistenceManager! = SVPersistenceManager.shared
-
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!

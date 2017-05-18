@@ -38,8 +38,7 @@ class SVRoomViewController: JSQMessagesViewController {
         let roomRef = ref!.child(sortedString(self.title!))
         let messageQuery = roomRef.queryLimited(toLast:25)
         
-        self.channelRefHandle = messageQuery.observe(.value, with: { (snapshot) -> Void in
-
+        self.channelRefHandle = messageQuery.observe(.childAdded, with: { (snapshot) -> Void in
             if snapshot.value is NSDictionary {
                 let messageData = snapshot.value as! NSDictionary
                 
@@ -103,7 +102,7 @@ class SVRoomViewController: JSQMessagesViewController {
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         self.inputToolbar.contentView.textView.text = ""
 
-        let roomRef = ref!.child(sortedString(self.title!))
+        let roomRef = ref!.child(sortedString(self.title!)).childByAutoId()
         roomRef.setValue( [ "senderId": senderId!,
                             "senderName": senderDisplayName!,
                             "text": text! ])

@@ -77,6 +77,7 @@ class SVChatTableViewController: UITableViewController {
                     if (v.allKeys as! Array<String>).contains(str) {
                         let lastMessage : String = ((v.value(forKey: str) as! NSDictionary).allValues.last as! NSDictionary).allValues.last as! String
                         self.lastMessages[self.listOfUsers[i].username] = lastMessage
+                        self.listOfUsers.insert(self.listOfUsers.remove(at: i), at: 0)
                     }
                 }
             }
@@ -116,7 +117,7 @@ class SVChatTableViewController: UITableViewController {
         
         if self.lastMessages.keys.contains(self.listOfUsers[indexPath.row].username) {
             cell!.detailTextLabel?.text = self.lastMessages[self.listOfUsers[indexPath.row].username]
-            cell!.detailTextLabel?.textColor = UIColor.gray
+            cell!.detailTextLabel?.textColor = UIColor.black
         } else {
             cell!.detailTextLabel?.text = "This conversation is empty"
             cell!.detailTextLabel?.textColor = UIColor.lightGray
@@ -139,9 +140,7 @@ class SVChatTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.performSegue(withIdentifier: kShowRoomSegue, sender: User.init(username: self.listOfUsers[indexPath.row].username,
-                                                                            avatar: self.listOfUsers[indexPath.row].avatar,
-                                                                            email: self.listOfUsers[indexPath.row].email))
+        self.performSegue(withIdentifier: kShowRoomSegue, sender: self.listOfUsers[indexPath.row])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Survyy
+@testable import ChatFirebase
 
 class SurvyyTests: XCTestCase {
     

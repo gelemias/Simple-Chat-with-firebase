@@ -1,9 +1,9 @@
 //
 //  SVRoomViewController.swift
-//  Survyy
+//  ChatFirebase
 //
 //  Created by Guillermo Delgado on 17/05/2017.
-//  Copyright © 2017 Survyy. Axll rights reserved.
+//  Copyright © 2017 ChatFirebase. Axll rights reserved.
 //
 
 import UIKit

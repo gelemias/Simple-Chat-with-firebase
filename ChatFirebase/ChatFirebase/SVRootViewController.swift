@@ -1,9 +1,9 @@
 //
 //  SVRootViewController.swift
-//  Survyy
+//  ChatFirebase
 //
 //  Created by Guillermo Delgado on 12/05/2017.
-//  Copyright © 2017 Survyy. All rights reserved.
+//  Copyright © 2017 ChatFirebase. All rights reserved.
 //
 
 import UIKit

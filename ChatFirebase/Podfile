@@ -1,9 +1,9 @@
 platform :ios, '9.0'
-target 'Survyy' do
+target 'ChatFirebase' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for Survyy
+  # Pods for ChatFirebase
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
@@ -11,7 +11,7 @@ target 'Survyy' do
   pod 'JSQMessagesViewController'
   pod 'SVProgressHUD'
 
-  target 'SurvyyTests' do
+  target 'ChatFirebaseTests' do
     inherit! :search_paths
     # Pods for testing
   end

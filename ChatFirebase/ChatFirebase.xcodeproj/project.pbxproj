@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59E70E0DAC8C8EFF772D14BC /* Pods_ChatFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4353B8412E011B3D63E476A /* Pods_ChatFirebase.framework */; };
+		B1049F57678D0E031B18D61F /* Pods_ChatFirebaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCE1D398F11EA28793E5BCA /* Pods_ChatFirebaseTests.framework */; };
 		C71B54171EC442A400B8BA6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B54161EC442A400B8BA6C /* AppDelegate.swift */; };
 		C71B54191EC442A400B8BA6C /* SVLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B54181EC442A400B8BA6C /* SVLoginViewController.swift */; };
 		C71B541C1EC442A400B8BA6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71B541A1EC442A400B8BA6C /* Main.storyboard */; };
 		C71B541E1EC442A400B8BA6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C71B541D1EC442A400B8BA6C /* Assets.xcassets */; };
 		C71B54211EC442A400B8BA6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71B541F1EC442A400B8BA6C /* LaunchScreen.storyboard */; };
-		C71B542C1EC442A400B8BA6C /* SurvyyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B542B1EC442A400B8BA6C /* SurvyyTests.swift */; };
+		C71B542C1EC442A400B8BA6C /* ChatFirebaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B542B1EC442A400B8BA6C /* ChatFirebaseTests.swift */; };
 		C787311F1EC586DF005D6288 /* SVChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C787311E1EC586DF005D6288 /* SVChatTableViewController.swift */; };
 		C78731231EC5882D005D6288 /* SVRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78731221EC5882D005D6288 /* SVRootViewController.swift */; };
 		C78731251EC58E5D005D6288 /* SVLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78731241EC58E5D005D6288 /* SVLoginManager.swift */; };
@@ -20,7 +22,6 @@
 		C7EEF6761EC4823D00F3D008 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7EEF6751EC4823D00F3D008 /* GoogleService-Info.plist */; };
 		C7F340FA1ECC332A0051F678 /* SVRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F340F91ECC332A0051F678 /* SVRoomViewController.swift */; };
 		CDD538E8C10F8D7019FFF961 /* Pods_SurvyyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA73EF6A80E8B1506114ADA /* Pods_SurvyyTests.framework */; };
-		EC746DE1EE633D5AAF83AE09 /* Pods_Survyy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D74FA5686E720915E5EEEE3 /* Pods_Survyy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,29 +35,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B002DCA3AE46552914BAA2E /* Pods-ChatFirebaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatFirebaseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatFirebaseTests/Pods-ChatFirebaseTests.debug.xcconfig"; sourceTree = "<group>"; };
+		27B85921DED15E169E59FD11 /* Pods-ChatFirebaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatFirebaseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatFirebaseTests/Pods-ChatFirebaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		3D030356F7ED35C97AE15B9A /* Pods-SurvyyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurvyyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SurvyyTests/Pods-SurvyyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3D74FA5686E720915E5EEEE3 /* Pods_Survyy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survyy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5D8086886162FDD8AAFBFE /* Pods-Survyy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survyy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Survyy/Pods-Survyy.debug.xcconfig"; sourceTree = "<group>"; };
+		5DCE1D398F11EA28793E5BCA /* Pods_ChatFirebaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatFirebaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DA73EF6A80E8B1506114ADA /* Pods_SurvyyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurvyyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		867E22C9A50A77BAD306E47E /* Pods-ChatFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatFirebase/Pods-ChatFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		89ED7A8642CEA2316AF83520 /* Pods-Survyy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survyy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Survyy/Pods-Survyy.release.xcconfig"; sourceTree = "<group>"; };
 		94603E86C25DE014396890CB /* Pods-SurvyyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurvyyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SurvyyTests/Pods-SurvyyTests.release.xcconfig"; sourceTree = "<group>"; };
-		C71B54131EC442A400B8BA6C /* Survyy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Survyy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C71B54131EC442A400B8BA6C /* ChatFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71B54161EC442A400B8BA6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C71B54181EC442A400B8BA6C /* SVLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVLoginViewController.swift; sourceTree = "<group>"; };
 		C71B541B1EC442A400B8BA6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C71B541D1EC442A400B8BA6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C71B54201EC442A400B8BA6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C71B54221EC442A400B8BA6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C71B54271EC442A400B8BA6C /* SurvyyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurvyyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C71B542B1EC442A400B8BA6C /* SurvyyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurvyyTests.swift; sourceTree = "<group>"; };
+		C71B54271EC442A400B8BA6C /* ChatFirebaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatFirebaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C71B542B1EC442A400B8BA6C /* ChatFirebaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFirebaseTests.swift; sourceTree = "<group>"; };
 		C71B542D1EC442A400B8BA6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C787311E1EC586DF005D6288 /* SVChatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVChatTableViewController.swift; sourceTree = "<group>"; };
 		C78731221EC5882D005D6288 /* SVRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVRootViewController.swift; sourceTree = "<group>"; };
 		C78731241EC58E5D005D6288 /* SVLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVLoginManager.swift; sourceTree = "<group>"; };
 		C7E515B81EC994AD00762212 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		C7E515BA1EC996EE00762212 /* Survyy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Survyy.entitlements; sourceTree = "<group>"; };
+		C7E515BA1EC996EE00762212 /* ChatFirebase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChatFirebase.entitlements; sourceTree = "<group>"; };
 		C7EEF6751EC4823D00F3D008 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C7F340F91ECC332A0051F678 /* SVRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVRoomViewController.swift; sourceTree = "<group>"; };
+		C9F084896C4794B1001A9EEC /* Pods-ChatFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatFirebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatFirebase/Pods-ChatFirebase.debug.xcconfig"; sourceTree = "<group>"; };
+		F4353B8412E011B3D63E476A /* Pods_ChatFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7E515B91EC994AD00762212 /* UserNotifications.framework in Frameworks */,
-				EC746DE1EE633D5AAF83AE09 /* Pods_Survyy.framework in Frameworks */,
+				59E70E0DAC8C8EFF772D14BC /* Pods_ChatFirebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDD538E8C10F8D7019FFF961 /* Pods_SurvyyTests.framework in Frameworks */,
+				B1049F57678D0E031B18D61F /* Pods_ChatFirebaseTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,8 +91,8 @@
 		C71B540A1EC442A400B8BA6C = {
 			isa = PBXGroup;
 			children = (
-				C71B54151EC442A400B8BA6C /* Survyy */,
-				C71B542A1EC442A400B8BA6C /* SurvyyTests */,
+				C71B54151EC442A400B8BA6C /* ChatFirebase */,
+				C71B542A1EC442A400B8BA6C /* ChatFirebaseTests */,
 				C71B54141EC442A400B8BA6C /* Products */,
 				FE412A9CFEEBF6458ECAE232 /* Pods */,
 				D8303A8334F9D998BB1AB744 /* Frameworks */,
@@ -94,16 +102,16 @@
 		C71B54141EC442A400B8BA6C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C71B54131EC442A400B8BA6C /* Survyy.app */,
-				C71B54271EC442A400B8BA6C /* SurvyyTests.xctest */,
+				C71B54131EC442A400B8BA6C /* ChatFirebase.app */,
+				C71B54271EC442A400B8BA6C /* ChatFirebaseTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C71B54151EC442A400B8BA6C /* Survyy */ = {
+		C71B54151EC442A400B8BA6C /* ChatFirebase */ = {
 			isa = PBXGroup;
 			children = (
-				C7E515BA1EC996EE00762212 /* Survyy.entitlements */,
+				C7E515BA1EC996EE00762212 /* ChatFirebase.entitlements */,
 				C71B54361EC4497D00B8BA6C /* Managers */,
 				C71B54161EC442A400B8BA6C /* AppDelegate.swift */,
 				C71B54181EC442A400B8BA6C /* SVLoginViewController.swift */,
@@ -116,15 +124,16 @@
 				C71B54221EC442A400B8BA6C /* Info.plist */,
 				C7EEF6751EC4823D00F3D008 /* GoogleService-Info.plist */,
 			);
-			path = Survyy;
+			path = ChatFirebase;
 			sourceTree = "<group>";
 		};
-		C71B542A1EC442A400B8BA6C /* SurvyyTests */ = {
+		C71B542A1EC442A400B8BA6C /* ChatFirebaseTests */ = {
 			isa = PBXGroup;
 			children = (
-				C71B542B1EC442A400B8BA6C /* SurvyyTests.swift */,
+				C71B542B1EC442A400B8BA6C /* ChatFirebaseTests.swift */,
 				C71B542D1EC442A400B8BA6C /* Info.plist */,
 			);
+			name = ChatFirebaseTests;
 			path = SurvyyTests;
 			sourceTree = "<group>";
 		};
@@ -142,6 +151,8 @@
 				C7E515B81EC994AD00762212 /* UserNotifications.framework */,
 				3D74FA5686E720915E5EEEE3 /* Pods_Survyy.framework */,
 				6DA73EF6A80E8B1506114ADA /* Pods_SurvyyTests.framework */,
+				F4353B8412E011B3D63E476A /* Pods_ChatFirebase.framework */,
+				5DCE1D398F11EA28793E5BCA /* Pods_ChatFirebaseTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -153,6 +164,10 @@
 				89ED7A8642CEA2316AF83520 /* Pods-Survyy.release.xcconfig */,
 				3D030356F7ED35C97AE15B9A /* Pods-SurvyyTests.debug.xcconfig */,
 				94603E86C25DE014396890CB /* Pods-SurvyyTests.release.xcconfig */,
+				C9F084896C4794B1001A9EEC /* Pods-ChatFirebase.debug.xcconfig */,
+				867E22C9A50A77BAD306E47E /* Pods-ChatFirebase.release.xcconfig */,
+				1B002DCA3AE46552914BAA2E /* Pods-ChatFirebaseTests.debug.xcconfig */,
+				27B85921DED15E169E59FD11 /* Pods-ChatFirebaseTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -160,9 +175,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C71B54121EC442A400B8BA6C /* Survyy */ = {
+		C71B54121EC442A400B8BA6C /* ChatFirebase */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C71B54301EC442A400B8BA6C /* Build configuration list for PBXNativeTarget "Survyy" */;
+			buildConfigurationList = C71B54301EC442A400B8BA6C /* Build configuration list for PBXNativeTarget "ChatFirebase" */;
 			buildPhases = (
 				119F73317778B4A0C0EDE5C2 /* [CP] Check Pods Manifest.lock */,
 				C71B540F1EC442A400B8BA6C /* Sources */,
@@ -175,14 +190,14 @@
 			);
 			dependencies = (
 			);
-			name = Survyy;
+			name = ChatFirebase;
 			productName = Survyy;
-			productReference = C71B54131EC442A400B8BA6C /* Survyy.app */;
+			productReference = C71B54131EC442A400B8BA6C /* ChatFirebase.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C71B54261EC442A400B8BA6C /* SurvyyTests */ = {
+		C71B54261EC442A400B8BA6C /* ChatFirebaseTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C71B54331EC442A400B8BA6C /* Build configuration list for PBXNativeTarget "SurvyyTests" */;
+			buildConfigurationList = C71B54331EC442A400B8BA6C /* Build configuration list for PBXNativeTarget "ChatFirebaseTests" */;
 			buildPhases = (
 				252FA3E8CE78967D01D2CC16 /* [CP] Check Pods Manifest.lock */,
 				C71B54231EC442A400B8BA6C /* Sources */,
@@ -196,9 +211,9 @@
 			dependencies = (
 				C71B54291EC442A400B8BA6C /* PBXTargetDependency */,
 			);
-			name = SurvyyTests;
+			name = ChatFirebaseTests;
 			productName = SurvyyTests;
-			productReference = C71B54271EC442A400B8BA6C /* SurvyyTests.xctest */;
+			productReference = C71B54271EC442A400B8BA6C /* ChatFirebaseTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -207,10 +222,10 @@
 		C71B540B1EC442A400B8BA6C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = SV;
+				CLASSPREFIX = "";
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = Survyy;
+				ORGANIZATIONNAME = ChatFirebase;
 				TargetAttributes = {
 					C71B54121EC442A400B8BA6C = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -229,7 +244,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C71B540E1EC442A400B8BA6C /* Build configuration list for PBXProject "Survyy" */;
+			buildConfigurationList = C71B540E1EC442A400B8BA6C /* Build configuration list for PBXProject "ChatFirebase" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -242,8 +257,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C71B54121EC442A400B8BA6C /* Survyy */,
-				C71B54261EC442A400B8BA6C /* SurvyyTests */,
+				C71B54121EC442A400B8BA6C /* ChatFirebase */,
+				C71B54261EC442A400B8BA6C /* ChatFirebaseTests */,
 			);
 		};
 /* End PBXProject section */
@@ -297,7 +312,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Survyy/Pods-Survyy-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatFirebase/Pods-ChatFirebase-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		252FA3E8CE78967D01D2CC16 /* [CP] Check Pods Manifest.lock */ = {
@@ -327,7 +342,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SurvyyTests/Pods-SurvyyTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatFirebaseTests/Pods-ChatFirebaseTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4354D9DFA084E89D330037DA /* [CP] Embed Pods Frameworks */ = {
@@ -342,7 +357,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Survyy/Pods-Survyy-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatFirebase/Pods-ChatFirebase-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9195C89EF4AE4500F476DFBB /* [CP] Copy Pods Resources */ = {
@@ -357,7 +372,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SurvyyTests/Pods-SurvyyTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatFirebaseTests/Pods-ChatFirebaseTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -380,7 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C71B542C1EC442A400B8BA6C /* SurvyyTests.swift in Sources */,
+				C71B542C1EC442A400B8BA6C /* ChatFirebaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +404,7 @@
 /* Begin PBXTargetDependency section */
 		C71B54291EC442A400B8BA6C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C71B54121EC442A400B8BA6C /* Survyy */;
+			target = C71B54121EC442A400B8BA6C /* ChatFirebase */;
 			targetProxy = C71B54281EC442A400B8BA6C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -511,14 +526,14 @@
 		};
 		C71B54311EC442A400B8BA6C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C5D8086886162FDD8AAFBFE /* Pods-Survyy.debug.xcconfig */;
+			baseConfigurationReference = C9F084896C4794B1001A9EEC /* Pods-ChatFirebase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RT5Y8QLUYK;
-				INFOPLIST_FILE = Survyy/Info.plist;
+				INFOPLIST_FILE = ChatFirebase/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.GuillermoRD.Survyy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GuillermoRD.ChatFirebase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -526,14 +541,14 @@
 		};
 		C71B54321EC442A400B8BA6C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89ED7A8642CEA2316AF83520 /* Pods-Survyy.release.xcconfig */;
+			baseConfigurationReference = 867E22C9A50A77BAD306E47E /* Pods-ChatFirebase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RT5Y8QLUYK;
-				INFOPLIST_FILE = Survyy/Info.plist;
+				INFOPLIST_FILE = ChatFirebase/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.GuillermoRD.Survyy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GuillermoRD.ChatFirebase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -541,38 +556,38 @@
 		};
 		C71B54341EC442A400B8BA6C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D030356F7ED35C97AE15B9A /* Pods-SurvyyTests.debug.xcconfig */;
+			baseConfigurationReference = 1B002DCA3AE46552914BAA2E /* Pods-ChatFirebaseTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = SurvyyTests/Info.plist;
+				INFOPLIST_FILE = ChatFirebaseTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.GuillermoRD.SurvyyTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GuillermoRD.ChatFirebaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Survyy.app/Survyy";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChatFirebase.app/ChatFirebase";
 			};
 			name = Debug;
 		};
 		C71B54351EC442A400B8BA6C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94603E86C25DE014396890CB /* Pods-SurvyyTests.release.xcconfig */;
+			baseConfigurationReference = 27B85921DED15E169E59FD11 /* Pods-ChatFirebaseTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = SurvyyTests/Info.plist;
+				INFOPLIST_FILE = ChatFirebaseTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.GuillermoRD.SurvyyTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GuillermoRD.ChatFirebaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Survyy.app/Survyy";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChatFirebase.app/ChatFirebase";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C71B540E1EC442A400B8BA6C /* Build configuration list for PBXProject "Survyy" */ = {
+		C71B540E1EC442A400B8BA6C /* Build configuration list for PBXProject "ChatFirebase" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C71B542E1EC442A400B8BA6C /* Debug */,
@@ -581,7 +596,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C71B54301EC442A400B8BA6C /* Build configuration list for PBXNativeTarget "Survyy" */ = {
+		C71B54301EC442A400B8BA6C /* Build configuration list for PBXNativeTarget "ChatFirebase" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C71B54311EC442A400B8BA6C /* Debug */,
@@ -590,7 +605,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C71B54331EC442A400B8BA6C /* Build configuration list for PBXNativeTarget "SurvyyTests" */ = {
+		C71B54331EC442A400B8BA6C /* Build configuration list for PBXNativeTarget "ChatFirebaseTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C71B54341EC442A400B8BA6C /* Debug */,

@@ -8,25 +8,22 @@
 
 import UIKit
 
-let kTextfieldMargin : CGFloat = 10.0
+let kTextfieldMargin: CGFloat = 10.0
 
 class SVLoginViewController: UIViewController, UITextFieldDelegate {
-    
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var repeatPassword: UITextField!
-    
     @IBOutlet weak var signUpButton: UIButton!
-
     @IBOutlet weak var rePasswordTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var emailTopConstraint: NSLayoutConstraint!
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,7 +46,7 @@ class SVLoginViewController: UIViewController, UITextFieldDelegate {
             }
         })
     }
-    
+
     func createAcount() {
         if (self.repeatPassword.text == self.password.text) {
             SVLoginManager.shared.signUp(self.username.text!, withEmail: self.email.text!, password: self.repeatPassword.text!, completion: { (user, error) in
@@ -72,7 +69,7 @@ class SVLoginViewController: UIViewController, UITextFieldDelegate {
             })
         }
     }
-    
+
     @IBAction func signUp(_ sender: Any) {
         self.emailTopConstraint.constant = self.username.frame.height + (kTextfieldMargin * 2)
         self.rePasswordTopConstraint.constant = self.password.frame.height + (kTextfieldMargin * 2)
@@ -83,20 +80,20 @@ class SVLoginViewController: UIViewController, UITextFieldDelegate {
             self.username.alpha = 1
         })
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        var proceed : Bool = true
+
+        var proceed: Bool = true
         for subview in view.subviews {
             if subview is UITextField {
-                let textField : UITextField = subview as! UITextField
+                let textField: UITextField = subview as! UITextField
                 if textField.alpha == 1 && textField.text!.isEmpty {
                     textField.becomeFirstResponder()
                     proceed = false
                 }
             }
         }
-        
+
         if proceed {
             if self.username.alpha == 1 {
                 self.createAcount()
@@ -107,7 +104,7 @@ class SVLoginViewController: UIViewController, UITextFieldDelegate {
 
         return false
     }
-    
+
     func dismissKeyboard() {
         view.endEditing(true)
         self.rePasswordTopConstraint.constant = kTextfieldMargin
@@ -121,4 +118,3 @@ class SVLoginViewController: UIViewController, UITextFieldDelegate {
         })
     }
 }
-

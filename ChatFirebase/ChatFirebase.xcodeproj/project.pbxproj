@@ -185,6 +185,7 @@
 				C71B54111EC442A400B8BA6C /* Resources */,
 				4354D9DFA084E89D330037DA /* [CP] Embed Pods Frameworks */,
 				2032540D3BFC3A87F5FDB7DE /* [CP] Copy Pods Resources */,
+				C7EF1A7F1ECF2F1500E761FA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -374,6 +375,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatFirebaseTests/Pods-ChatFirebaseTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		C7EF1A7F1ECF2F1500E761FA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 

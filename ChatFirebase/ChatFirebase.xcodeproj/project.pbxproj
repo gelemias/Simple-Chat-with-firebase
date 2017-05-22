@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		59E70E0DAC8C8EFF772D14BC /* Pods_ChatFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4353B8412E011B3D63E476A /* Pods_ChatFirebase.framework */; };
 		B1049F57678D0E031B18D61F /* Pods_ChatFirebaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCE1D398F11EA28793E5BCA /* Pods_ChatFirebaseTests.framework */; };
+		C70947201ED2ED1800D75065 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C709471F1ED2ED1800D75065 /* GoogleService-Info.plist */; };
 		C71B54171EC442A400B8BA6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B54161EC442A400B8BA6C /* AppDelegate.swift */; };
 		C71B54191EC442A400B8BA6C /* SVLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B54181EC442A400B8BA6C /* SVLoginViewController.swift */; };
 		C71B541C1EC442A400B8BA6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71B541A1EC442A400B8BA6C /* Main.storyboard */; };
@@ -19,7 +20,6 @@
 		C78731231EC5882D005D6288 /* SVRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78731221EC5882D005D6288 /* SVRootViewController.swift */; };
 		C78731251EC58E5D005D6288 /* SVLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78731241EC58E5D005D6288 /* SVLoginManager.swift */; };
 		C7E515B91EC994AD00762212 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7E515B81EC994AD00762212 /* UserNotifications.framework */; };
-		C7EEF6761EC4823D00F3D008 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7EEF6751EC4823D00F3D008 /* GoogleService-Info.plist */; };
 		C7F340FA1ECC332A0051F678 /* SVRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F340F91ECC332A0051F678 /* SVRoomViewController.swift */; };
 		CDD538E8C10F8D7019FFF961 /* Pods_SurvyyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA73EF6A80E8B1506114ADA /* Pods_SurvyyTests.framework */; };
 /* End PBXBuildFile section */
@@ -45,6 +45,7 @@
 		867E22C9A50A77BAD306E47E /* Pods-ChatFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatFirebase/Pods-ChatFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		89ED7A8642CEA2316AF83520 /* Pods-Survyy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survyy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Survyy/Pods-Survyy.release.xcconfig"; sourceTree = "<group>"; };
 		94603E86C25DE014396890CB /* Pods-SurvyyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurvyyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SurvyyTests/Pods-SurvyyTests.release.xcconfig"; sourceTree = "<group>"; };
+		C709471F1ED2ED1800D75065 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C71B54131EC442A400B8BA6C /* ChatFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71B54161EC442A400B8BA6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C71B54181EC442A400B8BA6C /* SVLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVLoginViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		C78731241EC58E5D005D6288 /* SVLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVLoginManager.swift; sourceTree = "<group>"; };
 		C7E515B81EC994AD00762212 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		C7E515BA1EC996EE00762212 /* ChatFirebase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChatFirebase.entitlements; sourceTree = "<group>"; };
-		C7EEF6751EC4823D00F3D008 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C7F340F91ECC332A0051F678 /* SVRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVRoomViewController.swift; sourceTree = "<group>"; };
 		C9F084896C4794B1001A9EEC /* Pods-ChatFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatFirebase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatFirebase/Pods-ChatFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 		F4353B8412E011B3D63E476A /* Pods_ChatFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,7 +122,7 @@
 				C71B541D1EC442A400B8BA6C /* Assets.xcassets */,
 				C71B541F1EC442A400B8BA6C /* LaunchScreen.storyboard */,
 				C71B54221EC442A400B8BA6C /* Info.plist */,
-				C7EEF6751EC4823D00F3D008 /* GoogleService-Info.plist */,
+				C709471F1ED2ED1800D75065 /* GoogleService-Info.plist */,
 			);
 			path = ChatFirebase;
 			sourceTree = "<group>";
@@ -270,7 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C71B54211EC442A400B8BA6C /* LaunchScreen.storyboard in Resources */,
-				C7EEF6761EC4823D00F3D008 /* GoogleService-Info.plist in Resources */,
+				C70947201ED2ED1800D75065 /* GoogleService-Info.plist in Resources */,
 				C71B541E1EC442A400B8BA6C /* Assets.xcassets in Resources */,
 				C71B541C1EC442A400B8BA6C /* Main.storyboard in Resources */,
 			);
@@ -547,7 +547,7 @@
 				INFOPLIST_FILE = ChatFirebase/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.GuillermoRD.ChatFirebase;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GuillermoRD.Survyy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -562,7 +562,7 @@
 				INFOPLIST_FILE = ChatFirebase/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.GuillermoRD.ChatFirebase;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GuillermoRD.Survyy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

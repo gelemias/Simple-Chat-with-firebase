@@ -13,89 +13,98 @@ import SVProgressHUD
 class SVLoginManager: NSObject {
 
     static let shared = SVLoginManager()
-    var ref: FIRDatabaseReference! = FIRDatabase.database().reference()
+    var ref: DatabaseReference! = Database.database().reference()
 
     private override init() { }
 
-    public var username: String? {
-get {
-    if FIRAuth.auth()?.currentUser != nil && FIRAuth.auth()?.currentUser!.displayName == nil {
-self.ref.child("users").child((FIRAuth.auth()?.currentUser?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
+    private(set) var username: String? {
+        get {
+            if Auth.auth().currentUser != nil && Auth.auth().currentUser!.displayName == nil {
+                let userRef = self.ref.child("users").child((Auth.auth().currentUser?.uid)!)
+                userRef.observeSingleEvent(of: .value, with: { (snapshot) in
 
-    let value = snapshot.value as? NSDictionary
-    let username = value?["username"] as? String ?? ""
-    let user = FIRAuth.auth()?.currentUser!
+                    let value = snapshot.value as? NSDictionary
+                    let username = value?["username"] as? String ?? ""
+                    let user = Auth.auth().currentUser!
 
-    let changeRequest = user!.profileChangeRequest()
-    changeRequest.displayName = username.capitalized
-    changeRequest.commitChanges(completion: nil)
-})
+                    let changeRequest = user.createProfileChangeRequest()
+                    changeRequest.displayName = username.capitalized
+                    changeRequest.commitChanges(completion: nil)
+                })
+            }
+
+            return Auth.auth().currentUser != nil ? Auth.auth().currentUser!.displayName: ""
+        }
+
+        set { }
     }
 
-    return FIRAuth.auth()?.currentUser != nil ? FIRAuth.auth()?.currentUser!.displayName: ""
-}
-    }
+    private(set) var email: String {
+        get {
+            return Auth.auth().currentUser != nil ? (Auth.auth().currentUser!.email)!: ""
+        }
 
-    public var email: String {
-get {
-    return FIRAuth.auth()?.currentUser != nil ? (FIRAuth.auth()?.currentUser!.email)!: ""
-}
+        set { }
     }
 
     public func isUserAuthorized() -> Bool {
-return FIRAuth.auth()?.currentUser != nil
+        return Auth.auth().currentUser != nil
     }
 
-    public func signUp(_ username: String, withEmail email: String, password: String, completion: FirebaseAuth.FIRAuthResultCallback? = nil) {
+    public func signUp(_ username: String,
+                       withEmail email: String,
+                       password: String, completion: FirebaseAuth.AuthResultCallback? = nil) {
 
-SVProgressHUD.show()
-DispatchQueue.global(qos: .background).async {
-    FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
-if error == nil {
-    let rndAvatar: Int = Int(arc4random_uniform(UInt32(7)))
-    self.ref.child("users").child(FIRAuth.auth()!.currentUser!.uid).setValue(["username": username.capitalized,
-      "email"  : email,
-      "avatar" : "avatar" + String(rndAvatar)])
-    if user != nil {
-let changeRequest = user!.profileChangeRequest()
-changeRequest.displayName = username.capitalized
-changeRequest.commitChanges(completion: nil)
+        SVProgressHUD.show()
+        DispatchQueue.global(qos: .background).async {
+            Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+                if error == nil {
+                    let rndAvatar: Int = Int(arc4random_uniform(UInt32(7)))
+                    let userRef = self.ref.child("users").child((Auth.auth().currentUser?.uid)!)
+                    userRef.setValue(["username": username.capitalized,
+                      "email": email,
+                      "avatar": "avatar" + String(rndAvatar)])
+                    if user != nil {
+                        let changeRequest = user?.createProfileChangeRequest()
+                        changeRequest?.displayName = username.capitalized
+                        changeRequest?.commitChanges(completion: nil)
+                    }
+                }
+
+                if completion != nil {
+                    completion!(user, error)
+
+                    DispatchQueue.main.async {
+                        SVProgressHUD.dismiss()
+                    }
+                }
+            })
+        }
     }
-}
 
-if completion != nil {
-    completion!(user, error)
+    public func signIn(withEmail email: String,
+                       password: String,
+                       completion: FirebaseAuth.AuthResultCallback? = nil) {
 
-    DispatchQueue.main.async {
-SVProgressHUD.dismiss()
-    }
-}
-    })
-}
-    }
+        SVProgressHUD.show()
+        DispatchQueue.global(qos: .background).async {
+            Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+            if completion != nil {
+                completion!(user, error)
 
-    public func signIn(withEmail email: String, password: String, completion: FirebaseAuth.FIRAuthResultCallback? = nil) {
-
-SVProgressHUD.show()
-DispatchQueue.global(qos: .background).async {
-    FIRAuth.auth()?.signIn(withEmail: email, password: password, completion:  { (user, error) in
-if completion != nil {
-    completion!(user, error)
-
-    DispatchQueue.main.async {
-SVProgressHUD.dismiss()
-    }
-}
-    })
-}
+                DispatchQueue.main.async {
+                    SVProgressHUD.dismiss()
+                }
+                }
+            })
+        }
     }
 
     public func signOut() {
-do {
-    try FIRAuth.auth()?.signOut()
-} catch let error as NSError {
-    print ("Error signing out: %@", error)
-
-}
+        do {
+            try Auth.auth().signOut()
+        } catch let error as NSError {
+            print ("Error signing out: %@", error)
+        }
     }
 }

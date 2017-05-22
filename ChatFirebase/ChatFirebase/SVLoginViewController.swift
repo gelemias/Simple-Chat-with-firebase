@@ -34,13 +34,16 @@ class SVLoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     func signIn() {
-        SVLoginManager.shared.signIn(withEmail: self.email.text!, password: self.repeatPassword.text!, completion: { (user, error) in
-            if (error != nil) {
-                let alert = UIAlertController(title: "Sign up failed", message: error?.localizedDescription, preferredStyle: .alert)
+        SVLoginManager.shared.signIn(withEmail: self.email.text!,
+                                     password: self.repeatPassword.text!,
+                                     completion: { (_, error) in
+            if error != nil {
+                let alert = UIAlertController(title: "Sign up failed",
+                                              message: error?.localizedDescription,
+                                              preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
-            }
-            else {
+            } else {
                 print("signIn - SUCCESS")
                 self.dismiss(animated: true, completion: nil)
             }
@@ -48,20 +51,26 @@ class SVLoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     func createAcount() {
-        if (self.repeatPassword.text == self.password.text) {
-            SVLoginManager.shared.signUp(self.username.text!, withEmail: self.email.text!, password: self.repeatPassword.text!, completion: { (user, error) in
-                if (error != nil) {
-                    let alert = UIAlertController(title: "Sign up failed", message: error?.localizedDescription, preferredStyle: .alert)
+        if self.repeatPassword.text == self.password.text {
+            SVLoginManager.shared.signUp(self.username.text!,
+                                         withEmail: self.email.text!,
+                                         password: self.repeatPassword.text!,
+                                         completion: { (_, error) in
+                if error != nil {
+                    let alert = UIAlertController(title: "Sign up failed",
+                                                  message: error?.localizedDescription,
+                                                  preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
-                }
-                else {
+                } else {
                     print("signup - SUCCESS")
                     self.dismiss(animated: true, completion: nil)
                 }
             })
         } else {
-            let alert = UIAlertController(title: "Password mismatch", message: "Please type the same password", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Password mismatch",
+                                          message: "Please type the same password",
+                                          preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: nil))
             self.present(alert, animated: true, completion: {
                 self.password.text = ""
@@ -84,13 +93,15 @@ class SVLoginViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
         var proceed: Bool = true
+
         for subview in view.subviews {
-            if subview is UITextField {
-                let textField: UITextField = subview as! UITextField
-                if textField.alpha == 1 && textField.text!.isEmpty {
-                    textField.becomeFirstResponder()
-                    proceed = false
-                }
+            guard let textField: UITextField = subview as? UITextField else {
+                continue
+            }
+
+            if textField.alpha == 1 && textField.text!.isEmpty {
+                textField.becomeFirstResponder()
+                proceed = false
             }
         }
 

@@ -17,14 +17,14 @@ class SVRoomViewController: JSQMessagesViewController {
     lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingBubble()
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
 
-    private lazy var ref: FIRDatabaseReference! = FIRDatabase.database().reference().child("chatroom")
-    private var channelRefHandle: FIRDatabaseHandle?
+    private lazy var ref: DatabaseReference! = Database.database().reference().child("chatroom")
+    private var channelRefHandle: DatabaseHandle?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.senderId = FIRAuth.auth()?.currentUser?.uid
-        self.senderDisplayName = FIRAuth.auth()?.currentUser?.displayName
+        self.senderId = Auth.auth().currentUser?.uid
+        self.senderDisplayName = Auth.auth().currentUser?.displayName
 
         self.title = self.senderDisplayName + " & " + attendee!.username
 
@@ -39,25 +39,24 @@ class SVRoomViewController: JSQMessagesViewController {
         let messageQuery = roomRef.queryLimited(toLast:25)
 
         self.channelRefHandle = messageQuery.observe(.childAdded, with: { (snapshot) -> Void in
-            if snapshot.value is NSDictionary {
-                let messageData = snapshot.value as! NSDictionary
 
-                if let id = messageData["senderId"] as! String!,
-                   let name = messageData["senderName"] as! String!,
-                   let text = messageData["text"] as! String!,
-                       text.characters.count > 0 {
-
-                    self.addMessage(withId: id, name: name, text: text)
-                    self.finishReceivingMessage()
-                } else {
+            guard snapshot.value is NSDictionary,
+                  let messageData = snapshot.value as? NSDictionary,
+                  let id = messageData["senderId"] as? String!,
+                  let name = messageData["senderName"] as? String!,
+                  let text = messageData["text"] as? String!,
+                  text.characters.count > 0 else {
                     print("Error! Could not decode message data")
-                }
+                    return
             }
+
+            self.addMessage(withId: id, name: name, text: text)
+            self.finishReceivingMessage()
         })
     }
 
-    private func addMessage(withId id: String, name: String, text: String) {
-        if let message = JSQMessage(senderId: id, displayName: name, text: text) {
+    private func addMessage(withId idString: String, name: String, text: String) {
+        if let message = JSQMessage(senderId: idString, displayName: name, text: text) {
             messages.append(message)
         }
     }
@@ -72,7 +71,8 @@ class SVRoomViewController: JSQMessagesViewController {
         return bubbleImageFactory!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
     }
 
-    override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!,
+                                 messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
         return messages[indexPath.item]
     }
 
@@ -80,13 +80,20 @@ class SVRoomViewController: JSQMessagesViewController {
         return messages.count
     }
 
-    override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource! {
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!,
+                                 messageBubbleImageDataForItemAt indexPath: IndexPath!)
+        -> JSQMessageBubbleImageDataSource! {
         let message = messages[indexPath.item]
         return message.senderId == senderId ? outgoingBubbleImageView: incomingBubbleImageView
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
+    override func collectionView(_ collectionView: UICollectionView,
+                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = super.collectionView(collectionView,
+                                              cellForItemAt: indexPath) as? JSQMessagesCollectionViewCell else {
+            return UICollectionViewCell.init()
+        }
+
         let message = messages[indexPath.item]
 
         cell.textView?.textColor = message.senderId == senderId ? UIColor.white: UIColor.black
@@ -94,11 +101,16 @@ class SVRoomViewController: JSQMessagesViewController {
         return cell
     }
 
-    override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!,
+                                 avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
         return nil
     }
 
-    override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
+    override func didPressSend(_ button: UIButton!,
+                               withMessageText text: String!,
+                               senderId: String!,
+                               senderDisplayName: String!,
+                               date: Date!) {
         self.inputToolbar.contentView.textView.text = ""
 
         let roomRef = ref!.child(sortedString(self.title!)).childByAutoId()

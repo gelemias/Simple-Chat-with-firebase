@@ -18,6 +18,8 @@ class SVRoomViewController: JSQMessagesViewController {
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
 
     private lazy var ref: DatabaseReference! = Database.database().reference().child("chatroom")
+    private lazy var lastRecRef: DatabaseReference! = Database.database().reference().child("chatRecords")
+
     private var channelRefHandle: DatabaseHandle?
 
     override func viewDidLoad() {
@@ -114,15 +116,27 @@ class SVRoomViewController: JSQMessagesViewController {
         self.inputToolbar.contentView.textView.text = ""
 
         let roomRef = ref!.child(sortedString(self.title!)).childByAutoId()
+
         roomRef.setValue( [ "senderId": senderId!,
                             "senderName": senderDisplayName!,
+                            "date": Date().toString(),
                             "text": text! ])
 
         finishSendingMessage()
+
+        lastRecRef!.child(sortedString(self.title!)).updateChildValues(["lastRecord": text!])
     }
 
     func sortedString(_ str: String) -> String {
         let charArray = Array(str.characters)
         return String(charArray.sorted())
+    }
+}
+
+extension Date {
+    func toString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM dd yyyy HH:mm"
+        return dateFormatter.string(from: self)
     }
 }

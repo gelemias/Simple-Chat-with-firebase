@@ -21,16 +21,16 @@ class SVChatTableViewController: UITableViewController {
 
     private lazy var usersRef: DatabaseReference! = Database.database().reference().child("users")
     private var usersChannelRefHandle: DatabaseHandle?
-    private lazy var chatRef: DatabaseReference! = Database.database().reference().child("chatroom")
-    private var chatChannelRefHandle: DatabaseHandle?
+    private lazy var chatRecordsRef: DatabaseReference! = Database.database().reference().child("chatRecords")
+    private var chatRecordsRefHandle: DatabaseHandle?
 
     let cellReuseIdentifier = "cell"
     var listOfUsers: [User] = []
-    var lastMessages: [String : String] = [:]
+    var lastMessages: NSDictionary = NSDictionary()
 
     deinit {
         usersRef.removeObserver(withHandle: usersChannelRefHandle!)
-        chatRef.removeObserver(withHandle: chatChannelRefHandle!)
+        chatRecordsRef.removeObserver(withHandle: chatRecordsRefHandle!)
     }
 
     override func viewDidLoad() {
@@ -44,8 +44,9 @@ class SVChatTableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit,
                                                                  target: self,
                                                                  action: #selector(editAccount))
-        self.title = SVLoginManager.shared.username
+        self.title = SVLoginManager.shared.username ?? ""
         self.observeListOfUsers()
+        self.observeLastMessages()
     }
 
     func observeListOfUsers() {
@@ -63,30 +64,21 @@ class SVChatTableViewController: UITableViewController {
             }
 
             self.listOfUsers = self.listOfUsers.sorted { $0.username < $1.username }
-            self.observeLastMessages()
+            self.tableView.reloadData()
+
         }) { (error) in
             print(error.localizedDescription)
         }
     }
 
     private func observeLastMessages() {
-        self.chatChannelRefHandle = chatRef.observe(.value, with: { (snapshot) -> Void in
+        self.chatRecordsRefHandle = chatRecordsRef.observe(.value, with: { (snapshot) -> Void in
+
             if snapshot.value is NSDictionary,
-               let v = snapshot.value as? NSDictionary {
+               let dic = snapshot.value as? NSDictionary {
 
-                for i in 0..<self.listOfUsers.count {
-                    let str = self.sortedString(self.listOfUsers[i].username + " & " + self.title!)
-                    if let allKeys: [String] = v.allKeys as? [String], allKeys.contains(str),
-                       let valueOfMessages: NSDictionary = v.value(forKey: str) as? NSDictionary,
-                       let listOfMessages: NSDictionary = valueOfMessages.allValues.last as? NSDictionary,
-                       let lastMessage: String = listOfMessages.allValues.last as? String {
-
-                        self.lastMessages[self.listOfUsers[i].username] = lastMessage
-                        self.listOfUsers.insert(self.listOfUsers.remove(at: i), at: 0)
-                    }
-                }
+                self.lastMessages = dic
             }
-
             self.tableView.reloadData()
         })
     }
@@ -120,8 +112,12 @@ class SVChatTableViewController: UITableViewController {
 
         cell!.textLabel?.text = self.listOfUsers[indexPath.row].username
 
-        if self.lastMessages.keys.contains(self.listOfUsers[indexPath.row].username) {
-            cell!.detailTextLabel?.text = self.lastMessages[self.listOfUsers[indexPath.row].username]
+        let keyStr = self.sortedString(self.title! + " & " + self.listOfUsers[indexPath.row].username)
+
+        if let value: NSDictionary = self.lastMessages.value(forKey: keyStr) as? NSDictionary,
+           let lastMsg: String = value.value(forKey:"lastRecord") as? String {
+
+            cell!.detailTextLabel?.text = lastMsg
             cell!.detailTextLabel?.textColor = UIColor.black
         } else {
             cell!.detailTextLabel?.text = "This conversation is empty"
@@ -152,8 +148,15 @@ class SVChatTableViewController: UITableViewController {
         if segue.identifier == kShowRoomSegue {
             if let roomVC: SVRoomViewController = segue.destination as? SVRoomViewController {
                 roomVC.attendee = sender as? User
-
             }
         }
+    }
+}
+
+extension String {
+    func toDate() -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM dd yyyy HH:mm"
+        return dateFormatter.date(from: self)!
     }
 }

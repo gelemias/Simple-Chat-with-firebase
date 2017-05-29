@@ -76,7 +76,6 @@ class SVChatTableViewController: UITableViewController {
 
             if snapshot.value is NSDictionary,
                let dic = snapshot.value as? NSDictionary {
-
                 self.lastMessages = dic
             }
             self.tableView.reloadData()
@@ -117,8 +116,13 @@ class SVChatTableViewController: UITableViewController {
         if let value: NSDictionary = self.lastMessages.value(forKey: keyStr) as? NSDictionary,
            let lastMsg: String = value.value(forKey:"lastRecord") as? String {
 
+            if let isRead = value.value(forKey: "read") as? Bool, isRead {
+                cell!.detailTextLabel?.textColor = UIColor.black
+            } else {
+                cell!.detailTextLabel?.textColor = UIColor.blue
+            }
+
             cell!.detailTextLabel?.text = lastMsg
-            cell!.detailTextLabel?.textColor = UIColor.black
         } else {
             cell!.detailTextLabel?.text = "This conversation is empty"
             cell!.detailTextLabel?.textColor = UIColor.lightGray

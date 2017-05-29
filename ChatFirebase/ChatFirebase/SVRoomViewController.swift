@@ -17,10 +17,17 @@ class SVRoomViewController: JSQMessagesViewController {
     lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingBubble()
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
 
+    var lastMasage = [AnyHashable: Any]()
+
     private lazy var ref: DatabaseReference! = Database.database().reference().child("chatroom")
     private lazy var lastRecRef: DatabaseReference! = Database.database().reference().child("chatRecords")
 
     private var channelRefHandle: DatabaseHandle?
+
+    deinit {
+        ref.removeAllObservers()
+        lastRecRef.removeAllObservers()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +39,14 @@ class SVRoomViewController: JSQMessagesViewController {
 
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
+
+        lastRecRef!.child(sortedString(self.title!)).observe(.value, with: { (snapshot) in
+            // Get value
+            if let value = snapshot.value as? [AnyHashable: Any] {
+                self.lastMasage = value
+                self.collectionView.reloadData()
+            }
+        })
 
         self.observeConversation()
     }
@@ -98,7 +113,14 @@ class SVRoomViewController: JSQMessagesViewController {
 
         let message = messages[indexPath.item]
 
-        cell.textView?.textColor = message.senderId == senderId ? UIColor.white: UIColor.black
+        let isMyMessage: Bool = message.senderId == senderId
+        cell.textView?.textColor = isMyMessage ? UIColor.white: UIColor.black
+
+        if let lastMsg = self.lastMasage["lastRecord"] as? String,
+           lastMsg == message.text,
+           !isMyMessage {
+            self.updateLastMessage(lastMsg, isRead: true)
+        }
 
         return cell
     }
@@ -123,13 +145,17 @@ class SVRoomViewController: JSQMessagesViewController {
                             "text": text! ])
 
         finishSendingMessage()
-
-        lastRecRef!.child(sortedString(self.title!)).updateChildValues(["lastRecord": text!])
+        self.updateLastMessage(text!, isRead: false)
     }
 
     func sortedString(_ str: String) -> String {
         let charArray = Array(str.characters)
         return String(charArray.sorted())
+    }
+
+    func updateLastMessage(_ text: String, isRead read: Bool) {
+        self.lastMasage = ["lastRecord": text, "read": read]
+        lastRecRef!.child(sortedString(self.title!)).updateChildValues(self.lastMasage)
     }
 }
 

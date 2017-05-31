@@ -41,9 +41,6 @@ class SVChatTableViewController: UITableViewController {
                                                                 style: .plain,
                                                                 target: self,
                                                                 action: #selector(logOut))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit,
-                                                                 target: self,
-                                                                 action: #selector(editAccount))
         self.title = SVLoginManager.shared.username ?? ""
         self.observeListOfUsers()
         self.observeLastMessages()

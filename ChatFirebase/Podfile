@@ -11,6 +11,7 @@ target 'ChatFirebase' do
   pod 'JSQMessagesViewController'
   pod 'SVProgressHUD'
   pod 'SwiftLint'
+  pod 'RDGliderViewController-Swift'
 
   target 'ChatFirebaseTests' do
     inherit!:search_paths

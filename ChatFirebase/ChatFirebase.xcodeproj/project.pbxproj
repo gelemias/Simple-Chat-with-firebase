@@ -10,6 +10,8 @@
 		59E70E0DAC8C8EFF772D14BC /* Pods_ChatFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4353B8412E011B3D63E476A /* Pods_ChatFirebase.framework */; };
 		B1049F57678D0E031B18D61F /* Pods_ChatFirebaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCE1D398F11EA28793E5BCA /* Pods_ChatFirebaseTests.framework */; };
 		C70947201ED2ED1800D75065 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C709471F1ED2ED1800D75065 /* GoogleService-Info.plist */; };
+		C710DEDF1EDDA5BE00381472 /* SVAvatarPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C710DEDD1EDDA5BE00381472 /* SVAvatarPickerViewController.swift */; };
+		C710DEE01EDDA5BE00381472 /* SVAvatarPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C710DEDE1EDDA5BE00381472 /* SVAvatarPickerViewController.xib */; };
 		C71B54171EC442A400B8BA6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B54161EC442A400B8BA6C /* AppDelegate.swift */; };
 		C71B54191EC442A400B8BA6C /* SVLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B54181EC442A400B8BA6C /* SVLoginViewController.swift */; };
 		C71B541C1EC442A400B8BA6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71B541A1EC442A400B8BA6C /* Main.storyboard */; };
@@ -46,6 +48,8 @@
 		89ED7A8642CEA2316AF83520 /* Pods-Survyy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survyy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Survyy/Pods-Survyy.release.xcconfig"; sourceTree = "<group>"; };
 		94603E86C25DE014396890CB /* Pods-SurvyyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurvyyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SurvyyTests/Pods-SurvyyTests.release.xcconfig"; sourceTree = "<group>"; };
 		C709471F1ED2ED1800D75065 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C710DEDD1EDDA5BE00381472 /* SVAvatarPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVAvatarPickerViewController.swift; sourceTree = "<group>"; };
+		C710DEDE1EDDA5BE00381472 /* SVAvatarPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SVAvatarPickerViewController.xib; sourceTree = "<group>"; };
 		C71B54131EC442A400B8BA6C /* ChatFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71B54161EC442A400B8BA6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C71B54181EC442A400B8BA6C /* SVLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVLoginViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 				C7E515BA1EC996EE00762212 /* ChatFirebase.entitlements */,
 				C71B54361EC4497D00B8BA6C /* Managers */,
 				C71B54161EC442A400B8BA6C /* AppDelegate.swift */,
+				C710DEDD1EDDA5BE00381472 /* SVAvatarPickerViewController.swift */,
+				C710DEDE1EDDA5BE00381472 /* SVAvatarPickerViewController.xib */,
 				C71B54181EC442A400B8BA6C /* SVLoginViewController.swift */,
 				C78731221EC5882D005D6288 /* SVRootViewController.swift */,
 				C7F340F91ECC332A0051F678 /* SVRoomViewController.swift */,
@@ -272,6 +278,7 @@
 				C71B54211EC442A400B8BA6C /* LaunchScreen.storyboard in Resources */,
 				C70947201ED2ED1800D75065 /* GoogleService-Info.plist in Resources */,
 				C71B541E1EC442A400B8BA6C /* Assets.xcassets in Resources */,
+				C710DEE01EDDA5BE00381472 /* SVAvatarPickerViewController.xib in Resources */,
 				C71B541C1EC442A400B8BA6C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +408,7 @@
 				C7F340FA1ECC332A0051F678 /* SVRoomViewController.swift in Sources */,
 				C787311F1EC586DF005D6288 /* SVChatTableViewController.swift in Sources */,
 				C78731251EC58E5D005D6288 /* SVLoginManager.swift in Sources */,
+				C710DEDF1EDDA5BE00381472 /* SVAvatarPickerViewController.swift in Sources */,
 				C71B54171EC442A400B8BA6C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

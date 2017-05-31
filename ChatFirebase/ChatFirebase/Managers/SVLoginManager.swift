@@ -53,17 +53,18 @@ class SVLoginManager: NSObject {
 
     public func signUp(_ username: String,
                        withEmail email: String,
-                       password: String, completion: FirebaseAuth.AuthResultCallback? = nil) {
+                       password: String,
+                       avatar: String,
+                       completion: FirebaseAuth.AuthResultCallback? = nil) {
 
         SVProgressHUD.show()
         DispatchQueue.global(qos: .background).async {
             Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
                 if error == nil {
-                    let rndAvatar: Int = Int(arc4random_uniform(UInt32(7)))
                     let userRef = self.ref.child("users").child((Auth.auth().currentUser?.uid)!)
                     userRef.setValue(["username": username.capitalized,
                       "email": email,
-                      "avatar": "avatar" + String(rndAvatar)])
+                      "avatar": avatar])
                     if user != nil {
                         let changeRequest = user?.createProfileChangeRequest()
                         changeRequest?.displayName = username.capitalized

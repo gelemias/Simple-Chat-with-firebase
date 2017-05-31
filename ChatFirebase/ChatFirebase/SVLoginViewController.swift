@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import RDGliderViewController_Swift
 
 let kTextfieldMargin: CGFloat = 10.0
 
-class SVLoginViewController: UIViewController, UITextFieldDelegate {
+class SVLoginViewController: UIViewController, UITextFieldDelegate, SVAvatarPickerViewControllerDelegate {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -18,6 +19,24 @@ class SVLoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var rePasswordTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var emailTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var addAvatarButton: UIButton!
+
+    var avatarPickerGlider: RDGliderViewController?
+    var avatar = "avatar" + String(Int(arc4random_uniform(UInt32(7)))) {
+        didSet {
+            let superV = self.addAvatarButton.superview!
+            for v: UIView in superV.subviews {
+                if !(v is UIButton) {
+                    v.removeFromSuperview()
+                }
+            }
+
+            let avatarImageView: UIImageView = UIImageView(image: UIImage.init(named: self.avatar))
+            avatarImageView.frame = CGRect(x: 0, y: 0, width: superV.frame.width, height: superV.frame.height)
+
+            superV.insertSubview(avatarImageView, at: 0)
+        }
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -31,6 +50,15 @@ class SVLoginViewController: UIViewController, UITextFieldDelegate {
         self.email.delegate = self
         self.password.delegate = self
         self.repeatPassword.delegate = self
+
+        let content = SVAvatarPickerViewController(length: 300)
+        content.delegate = self
+        content.cornerRadius = 20.0
+        content.showShadow = true
+        self.avatarPickerGlider = RDGliderViewController.init(parent: self,
+                                                              WithContent: content,
+                                                              AndType: .RDScrollViewOrientationBottomToTop,
+                                                              WithOffsets: [0, 0.9])
     }
 
     func signIn() {
@@ -55,6 +83,7 @@ class SVLoginViewController: UIViewController, UITextFieldDelegate {
             SVLoginManager.shared.signUp(self.username.text!,
                                          withEmail: self.email.text!,
                                          password: self.repeatPassword.text!,
+                                         avatar: self.avatar,
                                          completion: { (_, error) in
                 if error != nil {
                     let alert = UIAlertController(title: "Sign up failed",
@@ -82,12 +111,19 @@ class SVLoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func signUp(_ sender: Any) {
         self.emailTopConstraint.constant = self.username.frame.height + (kTextfieldMargin * 2)
         self.rePasswordTopConstraint.constant = self.password.frame.height + (kTextfieldMargin * 2)
-        UIView.animate(withDuration: 0.2, animations: {
+
+        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
             self.repeatPassword.placeholder = "Repeat password"
             self.password.alpha = 1
             self.username.alpha = 1
-        })
+            self.addAvatarButton.alpha = 1
+        }, completion:nil)
+    }
+
+    @IBAction func addAvatarPressed(_ sender: Any) {
+        self.avatarPickerGlider?.expand()
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -121,11 +157,25 @@ class SVLoginViewController: UIViewController, UITextFieldDelegate {
         self.rePasswordTopConstraint.constant = kTextfieldMargin
         self.emailTopConstraint.constant = kTextfieldMargin
 
-        UIView.animate(withDuration: 0.2, animations: {
+        self.addAvatarButton.isHidden = false
+
+        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
             self.repeatPassword.placeholder = "Password"
             self.password.alpha = 0
             self.username.alpha = 0
+            self.addAvatarButton.alpha = 0
+
         })
+
+        self.avatarPickerGlider?.close()
+    }
+
+// MARK: - SVAvatarPickerViewControllerDelegate
+
+    func avatarWasPicked(avatar: String) {
+        self.avatar = avatar
+        self.avatarPickerGlider?.collapse()
     }
 }

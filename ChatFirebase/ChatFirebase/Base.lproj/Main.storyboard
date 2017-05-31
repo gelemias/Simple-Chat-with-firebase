@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Osz-jq-Uqa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Osz-jq-Uqa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SVLoginViewController" customModule="Survyy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SVLoginViewController" customModule="ChatFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -23,8 +23,25 @@
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9y-Ir-fVo">
                                 <rect key="frame" x="147" y="30" width="80" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="248-It-hQk">
+                                        <rect key="frame" x="0.0" y="-2" width="80" height="72"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="6zP-Jv-VOs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addAvatarPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fxt-lW-J9H"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.53511646639999999" green="0.91889148949999999" blue="0.51259258910000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="248-It-hQk" firstAttribute="centerY" secondItem="I9y-Ir-fVo" secondAttribute="centerY" constant="-6" id="LI3-Hb-5YJ"/>
+                                    <constraint firstItem="248-It-hQk" firstAttribute="centerX" secondItem="I9y-Ir-fVo" secondAttribute="centerX" id="M70-Tg-Tx3"/>
                                     <constraint firstAttribute="width" constant="80" id="SvR-5V-XXX"/>
                                     <constraint firstAttribute="height" constant="80" id="qxR-Ru-wJ3"/>
                                 </constraints>
@@ -101,6 +118,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addAvatarButton" destination="248-It-hQk" id="2XJ-4N-jA1"/>
                         <outlet property="email" destination="Gjj-cv-qVm" id="y1y-8N-cXr"/>
                         <outlet property="emailTopConstraint" destination="mY3-T7-pPk" id="AAY-bs-E09"/>
                         <outlet property="password" destination="0p2-Ds-YgD" id="Syh-yc-QtW"/>
@@ -117,7 +135,7 @@
         <!--Root-->
         <scene sceneID="NpC-SY-Rdz">
             <objects>
-                <viewController id="5A5-H7-ncJ" customClass="SVRootViewController" customModule="Survyy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5A5-H7-ncJ" customClass="SVRootViewController" customModule="ChatFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="87C-wJ-fFm"/>
                         <viewControllerLayoutGuide type="bottom" id="b8O-Hg-Wi4"/>
@@ -141,7 +159,7 @@
         <!--Chat Table View Controller-->
         <scene sceneID="bvM-oN-r7H">
             <objects>
-                <tableViewController id="n4A-E0-cXq" customClass="SVChatTableViewController" customModule="Survyy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="n4A-E0-cXq" customClass="SVChatTableViewController" customModule="ChatFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="byN-i1-pkQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,7 +180,7 @@
         <!--Room View Controller-->
         <scene sceneID="FzF-cE-XrU">
             <objects>
-                <viewController id="hTN-NZ-06g" customClass="SVRoomViewController" customModule="Survyy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hTN-NZ-06g" customClass="SVRoomViewController" customModule="ChatFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hOQ-V8-tnV"/>
                         <viewControllerLayoutGuide type="bottom" id="QmY-TR-Z9a"/>
@@ -196,7 +214,7 @@
         <!--Intro-->
         <scene sceneID="2ih-VE-ae7">
             <objects>
-                <viewController title="Intro" id="yeP-UZ-HBv" customClass="SVIntroViewController" customModule="Survyy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Intro" id="yeP-UZ-HBv" customClass="SVIntroViewController" customModule="ChatFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tsb-CK-gJC"/>
                         <viewControllerLayoutGuide type="bottom" id="744-9y-ZCN"/>

@@ -25,9 +25,10 @@ class SVLoginViewController: UIViewController, UITextFieldDelegate, SVAvatarPick
     var avatar = "avatar" + String(Int(arc4random_uniform(UInt32(7)))) {
         didSet {
             let superV = self.addAvatarButton.superview!
-            for v: UIView in superV.subviews {
-                if !(v is UIButton) {
-                    v.removeFromSuperview()
+
+            superV.subviews.forEach {
+                if !($0 is UIButton) {
+                    $0.removeFromSuperview()
                 }
             }
 

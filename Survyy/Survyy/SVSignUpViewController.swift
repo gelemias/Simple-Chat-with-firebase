@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PBSignUpViewController: UIViewController {
+class SVSignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,6 @@ class PBSignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 

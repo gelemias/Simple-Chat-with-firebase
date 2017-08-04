@@ -58,12 +58,37 @@
                     <view key="view" contentMode="scaleToFill" id="Kgc-yT-aJx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TVc-sq-hJG">
+                                <rect key="frame" x="20" y="181" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="HvC-YW-EFt"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2NQ-Hf-eNq">
+                                <rect key="frame" x="20" y="239" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bNk-RE-n5T"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TVc-sq-hJG" firstAttribute="centerX" secondItem="Kgc-yT-aJx" secondAttribute="centerX" id="4Nh-Pg-kz3"/>
+                            <constraint firstAttribute="trailing" secondItem="TVc-sq-hJG" secondAttribute="trailing" constant="20" id="NoW-Mk-QwL"/>
+                            <constraint firstItem="TVc-sq-hJG" firstAttribute="leading" secondItem="Kgc-yT-aJx" secondAttribute="leading" constant="20" id="jgP-Je-bSg"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sU7-kL-WKJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-980" y="1099"/>
+            <point key="canvasLocation" x="-980" y="1098.8005997001501"/>
         </scene>
     </scenes>
 </document>

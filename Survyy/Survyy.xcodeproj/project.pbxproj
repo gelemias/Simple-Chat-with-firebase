@@ -13,6 +13,8 @@
 		C75AF2741F3352BC00A39C27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C75AF2731F3352BC00A39C27 /* GoogleService-Info.plist */; };
 		C75AF2771F33571200A39C27 /* SVLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75AF2761F33571200A39C27 /* SVLoginManager.swift */; };
 		C75AF2791F3358B900A39C27 /* SVLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75AF2781F3358B900A39C27 /* SVLoginViewController.swift */; };
+		C76A4E731F34819F0058F517 /* SVFormBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76A4E721F34819F0058F517 /* SVFormBaseViewController.swift */; };
+		C76A4E751F349D210058F517 /* SVSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76A4E741F349D210058F517 /* SVSignUpViewController.swift */; };
 		C798FDD61F334B680084AE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C798FDD51F334B680084AE39 /* AppDelegate.swift */; };
 		C798FDD81F334B680084AE39 /* SVRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C798FDD71F334B680084AE39 /* SVRootViewController.swift */; };
 		C798FDDB1F334B680084AE39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C798FDD91F334B680084AE39 /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 		C75AF2731F3352BC00A39C27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C75AF2761F33571200A39C27 /* SVLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVLoginManager.swift; sourceTree = "<group>"; };
 		C75AF2781F3358B900A39C27 /* SVLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVLoginViewController.swift; sourceTree = "<group>"; };
+		C76A4E721F34819F0058F517 /* SVFormBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVFormBaseViewController.swift; sourceTree = "<group>"; };
+		C76A4E741F349D210058F517 /* SVSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVSignUpViewController.swift; sourceTree = "<group>"; };
 		C798FDD21F334B680084AE39 /* Survyy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Survyy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C798FDD51F334B680084AE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C798FDD71F334B680084AE39 /* SVRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVRootViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 				C798FDE11F334B680084AE39 /* Info.plist */,
 				C75AF2731F3352BC00A39C27 /* GoogleService-Info.plist */,
 				C75AF2781F3358B900A39C27 /* SVLoginViewController.swift */,
+				C76A4E721F34819F0058F517 /* SVFormBaseViewController.swift */,
+				C76A4E741F349D210058F517 /* SVSignUpViewController.swift */,
 			);
 			path = Survyy;
 			sourceTree = "<group>";
@@ -382,16 +388,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Survyy/Pods-Survyy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Canvas/Canvas.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/RDGliderViewController-Swift/RDGliderViewController_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Canvas.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RDGliderViewController_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,7 +507,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C76A4E751F349D210058F517 /* SVSignUpViewController.swift in Sources */,
 				C75AF2771F33571200A39C27 /* SVLoginManager.swift in Sources */,
+				C76A4E731F34819F0058F517 /* SVFormBaseViewController.swift in Sources */,
 				C798FDD81F334B680084AE39 /* SVRootViewController.swift in Sources */,
 				C798FDD61F334B680084AE39 /* AppDelegate.swift in Sources */,
 				C75AF2791F3358B900A39C27 /* SVLoginViewController.swift in Sources */,

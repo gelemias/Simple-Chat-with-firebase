@@ -9,7 +9,7 @@ target 'Survyy' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'SwiftLint'
-  pod 'RDGliderViewController-Swift'
+  pod 'Canvas'
 
   target 'SurvyyTests' do
     inherit! :search_paths

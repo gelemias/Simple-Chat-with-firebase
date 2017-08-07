@@ -110,14 +110,14 @@ class SVLoginViewController: SVFormBaseViewController {
 
     func keyboardWillShow(_ notification: NSNotification!) {
 
-        var fieldFocused: UITextField!
+        var fieldFocused: UITextField?
 
         for field: UITextField in _inputFields where field.isFirstResponder {
             fieldFocused = field
         }
 
         if self.isWithinScreenThreshold() {
-            self.logoTopConstraint.constant = -(fieldFocused.frame.height * CGFloat((_inputFields.index(of: fieldFocused)! + 1)))
+            self.logoTopConstraint.constant = -((fieldFocused?.frame.height)! * CGFloat((_inputFields.index(of: fieldFocused!)! + 1)))
         }
 
         UIView.animate(withDuration: 0.2, animations: {
@@ -252,7 +252,7 @@ class SVLoginViewController: SVFormBaseViewController {
 
     @IBAction func doLogin(_ sender: UIButton?) {
 
-        self.animateButton(btn: sender!)
+        self.animateButton(btn: sender)
 
         SVLoginManager.shared.signIn(withEmail: self.usernameTextField.text!,
                                      password: self.rePasswordTextField.text!,
@@ -315,22 +315,20 @@ class SVLoginViewController: SVFormBaseViewController {
 
             self.dismissKeyboard()
 
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            guard let signupvc = storyboard.instantiateViewController(withIdentifier: "SVSignUpViewController") as? SVSignUpViewController else {
-                return
-            }
+            SVLoginManager.shared.signUp(self.usernameTextField.text!,
+                                         password: self.rePasswordTextField.text!,
+                                         completion: { (_, error) in
 
-//            [signupvc addUsername:self.usernameTextField.text andPassword:self.passwordTextField.text];
-
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
-
-                let transition = CATransition.init()
-                transition.duration = CFTimeInterval(1.0)
-                transition.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)
-                transition.type = kCATransitionPush
-                transition.subtype = kCATransitionFromBottom
-                self.view.window?.layer.add(transition, forKey:nil)
-                self.present(signupvc, animated: false, completion: nil)
+                                            if error != nil {
+                                                let alert = UIAlertController(title: "Sign up failed",
+                                                                              message: error?.localizedDescription,
+                                                                              preferredStyle: .alert)
+                                                alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: nil))
+                                                self.present(alert, animated: true, completion: nil)
+                                            } else {
+                                                print("signIn - SUCCESS")
+                                                self.dismiss(animated: false, completion: nil)
+                                            }
             })
         }
     }
@@ -372,6 +370,7 @@ class SVLoginViewController: SVFormBaseViewController {
         self.animateButton(btn: sender)
 
     }
+
 // MARK: - Private class helpers
 
     func isWithinScreenThreshold() -> Bool {

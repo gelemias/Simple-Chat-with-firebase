@@ -20,21 +20,18 @@ class SVLoginManager: NSObject {
         return Auth.auth().currentUser != nil
     }
 
-    public func signUp(_ username: String,
-                       withEmail email: String,
+    public func signUp(_ email: String,
                        password: String,
                        completion: FirebaseAuth.AuthResultCallback? = nil) {
 
-//        SVProgressHUD.show()
+        let hud = SVProgressHUD.init(WithCustomHudInTopViewWithText: "Signing in...")
         DispatchQueue.global(qos: .background).async {
             Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
                 if error == nil {
                     let userRef = self.ref.child("users").child((Auth.auth().currentUser?.uid)!)
-                    userRef.setValue(["username": username.capitalized,
-                                      "email": email])
+                    userRef.setValue(["email": email])
                     if user != nil {
                         let changeRequest = user?.createProfileChangeRequest()
-                        changeRequest?.displayName = username.capitalized
                         changeRequest?.commitChanges(completion: nil)
                     }
                 }
@@ -43,7 +40,7 @@ class SVLoginManager: NSObject {
                     completion!(user, error)
 
                     DispatchQueue.main.async {
-//                        SVProgressHUD.dismiss()
+                        hud.hide()
                     }
                 }
             })
@@ -54,14 +51,14 @@ class SVLoginManager: NSObject {
                        password: String,
                        completion: FirebaseAuth.AuthResultCallback? = nil) {
 
-//        SVProgressHUD.show()
+        let hud = SVProgressHUD.init(WithCustomHudInTopViewWithText: "Logging in...")
         DispatchQueue.global(qos: .background).async {
             Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
                 if completion != nil {
                     completion!(user, error)
 
                     DispatchQueue.main.async {
-//                        SVProgressHUD.dismiss()
+                        hud.hide()
                     }
                 }
             })

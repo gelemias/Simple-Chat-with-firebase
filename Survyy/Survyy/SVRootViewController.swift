@@ -12,6 +12,8 @@ class SVRootViewController: UIViewController {
 
     let kShowLoginSegue = "ShowLoginSegue"
     let kShowHomeSegue = "ShowHomeSegue"
+    let kShowIntroSegue = "ShowIntroSegue"
+    let kShowFillUpSegue = "ShowFillUpSegue"
 
     override func viewWillAppear(_ animated: Bool) {
 
@@ -34,7 +36,7 @@ class SVRootViewController: UIViewController {
         if !SVLoginManager.shared.isUserAuthorized() {
             self.performSegue(withIdentifier: kShowLoginSegue, sender: self)
         } else {
-            self.performSegue(withIdentifier: kShowHomeSegue, sender: self)
+            self.performSegue(withIdentifier: kShowIntroSegue, sender: self)
         }
     }
 }

@@ -9,6 +9,7 @@ target 'Survyy' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'SwiftLint'
+  pod 'MBProgressHUD'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
 
   target 'SurvyyTests' do

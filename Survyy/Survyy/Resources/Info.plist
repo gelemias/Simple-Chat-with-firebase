@@ -20,6 +20,21 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+    <array>
+        <string>SourceSansPro-Regular</string>
+        <string>SourceSansPro-Black</string>
+        <string>SourceSansPro-Blacklt</string>
+        <string>SourceSansPro-Bold</string>
+        <string>SourceSansPro-Boldlt</string>
+        <string>SourceSansPro-ExtraLight</string>
+        <string>SourceSansPro-ExtraLightlt</string>
+        <string>SourceSansPro-lt</string>
+        <string>SourceSansPro-Light</string>
+        <string>SourceSansPro-Lightlt</string>
+        <string>SourceSansPro-Semibold</string>
+        <string>SourceSansPro-Semiboldlt</string>
+    </array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

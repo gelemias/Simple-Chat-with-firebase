@@ -10,6 +10,9 @@
 		0BA3A15AAA976DFFB740FF8D /* Pods_SurvyyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A1B5FFAC56AE358E485F72 /* Pods_SurvyyTests.framework */; };
 		19F32A7F51872BB5DEA7AECC /* Pods_SurvyyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3718BBEDEC475A05A49A305 /* Pods_SurvyyUITests.framework */; };
 		8742C5423350243572D82106 /* Pods_Survyy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A166B865476E0F2ED0D457CC /* Pods_Survyy.framework */; };
+		C706EAAB1F38782D00FEC36A /* SVConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C706EAAA1F38782D00FEC36A /* SVConstants.swift */; };
+		C706EAB31F38807100FEC36A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C706EAAF1F38807100FEC36A /* LaunchScreen.storyboard */; };
+		C706EAB41F38807100FEC36A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C706EAB11F38807100FEC36A /* Main.storyboard */; };
 		C75AF2741F3352BC00A39C27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C75AF2731F3352BC00A39C27 /* GoogleService-Info.plist */; };
 		C75AF2771F33571200A39C27 /* SVLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75AF2761F33571200A39C27 /* SVLoginManager.swift */; };
 		C75AF2791F3358B900A39C27 /* SVLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75AF2781F3358B900A39C27 /* SVLoginViewController.swift */; };
@@ -17,9 +20,7 @@
 		C76A4E751F349D210058F517 /* SVSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76A4E741F349D210058F517 /* SVSignUpViewController.swift */; };
 		C798FDD61F334B680084AE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C798FDD51F334B680084AE39 /* AppDelegate.swift */; };
 		C798FDD81F334B680084AE39 /* SVRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C798FDD71F334B680084AE39 /* SVRootViewController.swift */; };
-		C798FDDB1F334B680084AE39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C798FDD91F334B680084AE39 /* Main.storyboard */; };
 		C798FDDD1F334B680084AE39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C798FDDC1F334B680084AE39 /* Assets.xcassets */; };
-		C798FDE01F334B680084AE39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C798FDDE1F334B680084AE39 /* LaunchScreen.storyboard */; };
 		C798FDEB1F334B680084AE39 /* SurvyyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C798FDEA1F334B680084AE39 /* SurvyyTests.swift */; };
 		C798FDF61F334B680084AE39 /* SurvyyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C798FDF51F334B680084AE39 /* SurvyyUITests.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,9 @@
 		7943B36ADD58F4756AEEAED7 /* Pods-Survyy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survyy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Survyy/Pods-Survyy.release.xcconfig"; sourceTree = "<group>"; };
 		8B52F73E520B5845C9722CA1 /* Pods-SurvyyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurvyyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SurvyyUITests/Pods-SurvyyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A166B865476E0F2ED0D457CC /* Pods_Survyy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survyy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C706EAAA1F38782D00FEC36A /* SVConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVConstants.swift; sourceTree = "<group>"; };
+		C706EAB01F38807100FEC36A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C706EAB21F38807100FEC36A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C75AF2731F3352BC00A39C27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C75AF2761F33571200A39C27 /* SVLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVLoginManager.swift; sourceTree = "<group>"; };
 		C75AF2781F3358B900A39C27 /* SVLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVLoginViewController.swift; sourceTree = "<group>"; };
@@ -55,9 +59,7 @@
 		C798FDD21F334B680084AE39 /* Survyy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Survyy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C798FDD51F334B680084AE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C798FDD71F334B680084AE39 /* SVRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVRootViewController.swift; sourceTree = "<group>"; };
-		C798FDDA1F334B680084AE39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C798FDDC1F334B680084AE39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C798FDDF1F334B680084AE39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C798FDE11F334B680084AE39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C798FDE61F334B680084AE39 /* SurvyyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurvyyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C798FDEA1F334B680084AE39 /* SurvyyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurvyyTests.swift; sourceTree = "<group>"; };
@@ -122,6 +124,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C706EAA91F3874BD00FEC36A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C76A4E721F34819F0058F517 /* SVFormBaseViewController.swift */,
+				C706EAAA1F38782D00FEC36A /* SVConstants.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C706EAAE1F387FC700FEC36A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C798FDDC1F334B680084AE39 /* Assets.xcassets */,
+				C706EAAF1F38807100FEC36A /* LaunchScreen.storyboard */,
+				C706EAB11F38807100FEC36A /* Main.storyboard */,
+				C798FDE11F334B680084AE39 /* Info.plist */,
+				C75AF2731F3352BC00A39C27 /* GoogleService-Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		C75AF2751F33568600A39C27 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,16 +178,12 @@
 		C798FDD41F334B680084AE39 /* Survyy */ = {
 			isa = PBXGroup;
 			children = (
+				C706EAAE1F387FC700FEC36A /* Resources */,
+				C706EAA91F3874BD00FEC36A /* Common */,
 				C75AF2751F33568600A39C27 /* Managers */,
 				C798FDD51F334B680084AE39 /* AppDelegate.swift */,
 				C798FDD71F334B680084AE39 /* SVRootViewController.swift */,
-				C798FDD91F334B680084AE39 /* Main.storyboard */,
-				C798FDDC1F334B680084AE39 /* Assets.xcassets */,
-				C798FDDE1F334B680084AE39 /* LaunchScreen.storyboard */,
-				C798FDE11F334B680084AE39 /* Info.plist */,
-				C75AF2731F3352BC00A39C27 /* GoogleService-Info.plist */,
 				C75AF2781F3358B900A39C27 /* SVLoginViewController.swift */,
-				C76A4E721F34819F0058F517 /* SVFormBaseViewController.swift */,
 				C76A4E741F349D210058F517 /* SVSignUpViewController.swift */,
 			);
 			path = Survyy;
@@ -309,10 +328,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C798FDE01F334B680084AE39 /* LaunchScreen.storyboard in Resources */,
+				C706EAB31F38807100FEC36A /* LaunchScreen.storyboard in Resources */,
 				C75AF2741F3352BC00A39C27 /* GoogleService-Info.plist in Resources */,
 				C798FDDD1F334B680084AE39 /* Assets.xcassets in Resources */,
-				C798FDDB1F334B680084AE39 /* Main.storyboard in Resources */,
+				C706EAB41F38807100FEC36A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,16 +407,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Survyy/Pods-Survyy-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Canvas/Canvas.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Canvas.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,6 +530,7 @@
 			files = (
 				C76A4E751F349D210058F517 /* SVSignUpViewController.swift in Sources */,
 				C75AF2771F33571200A39C27 /* SVLoginManager.swift in Sources */,
+				C706EAAB1F38782D00FEC36A /* SVConstants.swift in Sources */,
 				C76A4E731F34819F0058F517 /* SVFormBaseViewController.swift in Sources */,
 				C798FDD81F334B680084AE39 /* SVRootViewController.swift in Sources */,
 				C798FDD61F334B680084AE39 /* AppDelegate.swift in Sources */,
@@ -548,20 +570,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C798FDD91F334B680084AE39 /* Main.storyboard */ = {
+		C706EAAF1F38807100FEC36A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C798FDDA1F334B680084AE39 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C798FDDE1F334B680084AE39 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C798FDDF1F334B680084AE39 /* Base */,
+				C706EAB01F38807100FEC36A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C706EAB11F38807100FEC36A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C706EAB21F38807100FEC36A /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -668,7 +690,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 25C7G4ZGRB;
-				INFOPLIST_FILE = Survyy/Info.plist;
+				INFOPLIST_FILE = Survyy/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.survyy.Survyy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -682,7 +704,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 25C7G4ZGRB;
-				INFOPLIST_FILE = Survyy/Info.plist;
+				INFOPLIST_FILE = Survyy/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.survyy.Survyy;
 				PRODUCT_NAME = "$(TARGET_NAME)";

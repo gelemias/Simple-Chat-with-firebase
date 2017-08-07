@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sHi-sY-p00">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -30,17 +30,17 @@
                         <viewControllerLayoutGuide type="bottom" id="QU5-sw-Y9R"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8NX-9U-RNA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="survyy-app-logo2" translatesAutoresizingMaskIntoConstraints="NO" id="tZd-Fz-HZS" userLabel="Logo">
-                                <rect key="frame" x="104" y="60" width="167" height="100"/>
+                                <rect key="frame" x="76.5" y="60" width="167" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="scH-wt-Xav"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBe-Cq-TmG" userLabel="UsernameContainer">
-                                <rect key="frame" x="57.5" y="200" width="260" height="53"/>
+                                <rect key="frame" x="30" y="200" width="260" height="53"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q6W-c6-QE6" userLabel="Username">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="50"/>
@@ -80,7 +80,7 @@
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIT-wm-Ni8" userLabel="RePasswordContainer">
-                                <rect key="frame" x="57.5" y="267" width="260" height="53"/>
+                                <rect key="frame" x="30" y="267" width="260" height="53"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxr-z4-Lg7" userLabel="Password">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="50"/>
@@ -105,7 +105,7 @@
                                             <constraint firstItem="ofI-ya-fOl" firstAttribute="top" secondItem="nxr-z4-Lg7" secondAttribute="top" id="VPp-dc-ulH"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tn0-X3-iob" customClass="CSAnimationView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tn0-X3-iob" customClass="SpringView" customModule="Spring">
                                         <rect key="frame" x="260" y="0.0" width="50" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zmr-jX-9yH">
@@ -157,12 +157,6 @@
                                             <constraint firstAttribute="bottom" secondItem="6fs-do-vMa" secondAttribute="bottom" id="v2F-Bg-LXz"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                                                <real key="value" value="0.20000000000000001"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                                <integer key="value" value="0"/>
-                                            </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="type" value="pop"/>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="default">
@@ -187,7 +181,7 @@
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vun-AV-6AZ" userLabel="PasswordContainer">
-                                <rect key="frame" x="57.5" y="267" width="260" height="53"/>
+                                <rect key="frame" x="30" y="267" width="260" height="53"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QXV-Px-yFS" userLabel="Password">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="50"/>
@@ -212,7 +206,7 @@
                                             <constraint firstItem="kb3-6a-SIf" firstAttribute="leading" secondItem="cXE-vj-A2Q" secondAttribute="trailing" constant="4" id="t6d-MQ-dBg"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wjj-2m-qqI" customClass="CSAnimationView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wjj-2m-qqI" customClass="SpringView" customModule="Spring">
                                         <rect key="frame" x="260" y="0.0" width="50" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VMg-8O-Kjg">
@@ -264,12 +258,6 @@
                                             <constraint firstItem="65C-ly-f5C" firstAttribute="leading" secondItem="Wjj-2m-qqI" secondAttribute="leading" id="sYD-v6-bHT"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                                                <real key="value" value="0.20000000000000001"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                                <integer key="value" value="0"/>
-                                            </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="type" value="pop"/>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="default">
@@ -294,16 +282,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1V-2o-mJY" userLabel="Facebook Login">
-                                <rect key="frame" x="0.0" y="567" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="468" width="320" height="50"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook-icon" translatesAutoresizingMaskIntoConstraints="NO" id="xNJ-Gx-irC">
                                         <rect key="frame" x="50" y="15" width="10" height="20"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCw-po-BEg">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="15"/>
                                         <state key="normal" title="Login with facebook">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                 </subviews>
@@ -319,13 +307,13 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2p-hn-PYF" userLabel="Twitter Login">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZd-ZJ-PG5">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="15"/>
                                         <state key="normal" title="Login with google">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google-icon" translatesAutoresizingMaskIntoConstraints="NO" id="gY0-6X-Opq">
@@ -344,7 +332,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzD-xs-8zT">
-                                <rect key="frame" x="187.5" y="322" width="0.0" height="18"/>
+                                <rect key="frame" x="160" y="332" width="0.0" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="O80-zf-b4h"/>
                                 </constraints>
@@ -352,8 +340,8 @@
                                 <color key="textColor" red="0.97254901959999995" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSb-JI-65w">
-                                <rect key="frame" x="57.5" y="340" width="55" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSb-JI-65w" customClass="SpringButton" customModule="Spring">
+                                <rect key="frame" x="30" y="350" width="55" height="31"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Light" family="Source Sans Pro" pointSize="16"/>
                                 <state key="normal" title="Sign up">
                                     <color key="titleColor" red="0.21176470589999999" green="0.26274509800000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -364,12 +352,24 @@
                                 <state key="highlighted">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="pop"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="force">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="curve" value="spring"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autohide" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="doSignUp:" destination="7Gm-cA-GA3" eventType="touchUpInside" id="OYn-EP-E7M"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXa-yv-nQb">
-                                <rect key="frame" x="169.5" y="340" width="148" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXa-yv-nQb" customClass="SpringButton" customModule="Spring">
+                                <rect key="frame" x="142" y="350" width="148" height="31"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Light" family="Source Sans Pro" pointSize="16"/>
                                 <state key="normal" title="Forgot my password">
                                     <color key="titleColor" red="0.36862745099999999" green="0.41176470590000003" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -380,8 +380,15 @@
                                 <state key="highlighted">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autohide" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="doForgotPassword:" destination="7Gm-cA-GA3" eventType="touchUpInside" id="TMA-sW-Wlw"/>
+                                </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKN-wP-avg" customClass="CSAnimationView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKN-wP-avg" customClass="SpringView" customModule="Spring">
                                 <rect key="frame" x="0.0" y="20" width="55" height="55"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzV-kV-LQ1">
@@ -399,12 +406,6 @@
                                     <constraint firstItem="bzV-kV-LQ1" firstAttribute="centerX" secondItem="VKN-wP-avg" secondAttribute="centerX" id="wqN-mq-jUe"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                                        <real key="value" value="0.20000000000000001"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                        <integer key="value" value="0"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="type" value="pop"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -420,7 +421,7 @@
                             <constraint firstItem="VKN-wP-avg" firstAttribute="leading" secondItem="8NX-9U-RNA" secondAttribute="leading" id="6Fu-wn-1La"/>
                             <constraint firstAttribute="trailing" secondItem="a2p-hn-PYF" secondAttribute="trailing" id="B82-sX-Y8G"/>
                             <constraint firstItem="gXa-yv-nQb" firstAttribute="trailing" secondItem="cIT-wm-Ni8" secondAttribute="trailing" id="BxC-dI-ZKS"/>
-                            <constraint firstItem="gXa-yv-nQb" firstAttribute="top" secondItem="cIT-wm-Ni8" secondAttribute="bottom" constant="20" id="CBg-Hm-979"/>
+                            <constraint firstItem="gXa-yv-nQb" firstAttribute="top" secondItem="cIT-wm-Ni8" secondAttribute="bottom" constant="30" id="CBg-Hm-979"/>
                             <constraint firstItem="Vun-AV-6AZ" firstAttribute="top" secondItem="DBe-Cq-TmG" secondAttribute="bottom" constant="14" id="DY4-9P-RjS"/>
                             <constraint firstItem="a2p-hn-PYF" firstAttribute="top" secondItem="z1V-2o-mJY" secondAttribute="bottom" id="F0p-bv-Pje"/>
                             <constraint firstItem="zSb-JI-65w" firstAttribute="leading" secondItem="cIT-wm-Ni8" secondAttribute="leading" id="FVw-wt-DSc"/>
@@ -449,7 +450,7 @@
                     <connections>
                         <outlet property="backButton" destination="bzV-kV-LQ1" id="zrm-rA-eym"/>
                         <outlet property="errorLabel" destination="VzD-xs-8zT" id="sJO-zC-hNI"/>
-                        <outlet property="forgotPasswordButton" destination="gXa-yv-nQb" id="Eh5-B5-nhb"/>
+                        <outlet property="forgotPasswordButton" destination="gXa-yv-nQb" id="VIZ-ap-Zsn"/>
                         <outlet property="logoHeightConstraint" destination="scH-wt-Xav" id="6PN-jZ-7E0"/>
                         <outlet property="logoImgView" destination="tZd-Fz-HZS" id="Yag-HM-6JD"/>
                         <outlet property="logoTopConstraint" destination="4Xb-eX-AAz" id="UGz-oz-7tS"/>
@@ -476,7 +477,7 @@
                         <viewControllerLayoutGuide type="bottom" id="8mh-eV-6vl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HAx-1f-CIY" customClass="PBSignUpViewContro">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -510,7 +511,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>

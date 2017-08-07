@@ -21,8 +21,11 @@ class SVFormBaseViewController: UIViewController, UITextFieldDelegate {
 
     func showValidationErrorIn(_ textfield: UITextField) {
 
+        let blueColor = UIColor(hex:SVConstants.lightBlue)
+        let redColor = UIColor(hex:SVConstants.lightRed)
+
         let aniBlue: CAAnimationGroup = self.animationForBorder(WithFrom: kBorderWidth, widthTo: 0,
-                                                                colorFrom: UIColor.blue, colorTo: UIColor.clear,
+                                                                colorFrom: blueColor, colorTo: UIColor.clear,
                                                                 duration: 0.5)
 
         let layer = textfield.superview?.superview?.layer
@@ -30,13 +33,13 @@ class SVFormBaseViewController: UIViewController, UITextFieldDelegate {
         layer?.add(aniBlue, forKey:"color1")
 
         let aniRed: CAAnimationGroup = self.animationForBorder(WithFrom: kBorderWidth, widthTo: kBorderWidth,
-                                                                colorFrom: UIColor.clear, colorTo: UIColor.red,
+                                                                colorFrom: UIColor.clear, colorTo: redColor,
                                                                 duration: 0.5)
 
         layer?.add(aniRed, forKey:"color2")
 
         layer?.borderWidth = CGFloat(kBorderWidth)
-        layer?.borderColor = UIColor.red.cgColor
+        layer?.borderColor = redColor.cgColor
     }
 
     func animationForBorder(WithFrom widthFrom: Float, widthTo: Float, colorFrom: UIColor, colorTo: UIColor, duration: Float) -> CAAnimationGroup {
@@ -63,8 +66,9 @@ class SVFormBaseViewController: UIViewController, UITextFieldDelegate {
 
     func removeTextfieldDecoration(textfield: UITextField) {
 
+        let blueColor = UIColor(hex:SVConstants.lightBlue)
         let animation: CAAnimationGroup = self.animationForBorder(WithFrom: kBorderWidth, widthTo: 0.0,
-                                                                  colorFrom: UIColor.blue, colorTo: UIColor.clear,
+                                                                  colorFrom: blueColor, colorTo: UIColor.clear,
                                                                   duration: 0.5)
 
         let layer: CALayer = (textfield.superview?.superview?.layer)!

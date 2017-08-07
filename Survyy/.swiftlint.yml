@@ -7,8 +7,7 @@ opt_in_rules: # some rules are only opt-in
 included: # paths to include during linting. `--path` is ignored if present.
   # - Source
 excluded: # paths to ignore during linting. Takes precedence over `included`.
-  # - Carthage
-  # - Pods
+  - Pods
 # configurable rules can be customized from this configuration file
 # binary rules can set their severity level
 force_cast: warning # implicitly
@@ -23,8 +22,8 @@ type_body_length:
   - 400 # error
 # or they can set both explicitly
 file_length:
-  warning: 500
-  error: 1200
+  warning: 800
+  error: 1600
 # naming rules can set warnings/errors for min_length and max_length
 # additionally they can set excluded names
 type_name:

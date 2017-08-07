@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Canvas
+import Spring
 
 class SVLoginViewController: SVFormBaseViewController {
 
@@ -160,6 +160,18 @@ class SVLoginViewController: SVFormBaseViewController {
         }
     }
 
+    override func dismissKeyboard() {
+        super.dismissKeyboard()
+
+        self.usernameTextField.resignFirstResponder()
+        self.passwordTextField.resignFirstResponder()
+        self.rePasswordTextField.resignFirstResponder()
+
+        for field: UITextField in _inputFields where field.text!.characters.count > 0 {
+            _ = self.checkToShowSubmitButton()
+        }
+    }
+
 // MARK: - UITextField Delegate
 
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
@@ -212,14 +224,16 @@ class SVLoginViewController: SVFormBaseViewController {
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
 
+        let blueColor = UIColor(hex:SVConstants.lightBlue)
+
         let animation: CAAnimationGroup = self.animationForBorder(WithFrom: 0, widthTo: kBorderWidth,
-                                                                  colorFrom: UIColor.clear, colorTo: UIColor.blue,
+                                                                  colorFrom: UIColor.clear, colorTo: blueColor,
                                                                   duration: 0.5)
         let layer = textField.superview?.superview?.layer
 
         layer?.add(animation, forKey:"color and width")
         layer?.borderWidth = CGFloat(kBorderWidth)
-        layer?.borderColor = UIColor.blue.cgColor
+        layer?.borderColor = blueColor.cgColor
 
         if _errorsList.count == 0 || _errorsList.count == 1 && _errorsList.contains(textField) {
             self.showErrorMessage(show: false)
@@ -257,6 +271,8 @@ class SVLoginViewController: SVFormBaseViewController {
     }
 
     @IBAction func doSignUp(_ sender: UIButton?) {
+
+        self.animateButton(btn: sender)
 
         self.clearAllTextfields()
         self.usernameTextField.resignFirstResponder()
@@ -322,13 +338,10 @@ class SVLoginViewController: SVFormBaseViewController {
     @IBAction func doBack(_ sender: UIButton?) {
 
         self.animateButton(btn: sender)
+
         self.clearAllTextfields()
 
         self.rePasswordTopConstraint.constant = _defaultRePasswordTopMargin
-
-        guard let btn: UIButton = sender else {
-            return
-        }
 
         if UIDevice.current.userInterfaceIdiom == .phone && self.isWithinScreenThreshold() {
             self.logoTopConstraint.constant = kLogoTopMargin
@@ -338,24 +351,27 @@ class SVLoginViewController: SVFormBaseViewController {
             self.logoHeightConstraint.constant = _defaultLogoHeightConstraint
         }
 
-        self.backButton.isHidden = true
-        self.signupButton.isHidden = false
-        self.forgotPasswordButton.isHidden = false
         self.passwordButtonTrailingConstraint.constant = _defaultPasswordButtonTrailingConstraint
         self.rePasswordButtonTrailingConstraint.constant = _defaultPasswordButtonTrailingConstraint
 
-        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
             self.view.layoutIfNeeded()
             self.rePasswordTextField.superview?.alpha = 0
-            btn.alpha = 0
+            sender?.alpha = 0
 
             self.signupButton.alpha = 1
             self.forgotPasswordButton.alpha = 1
         }) { (_) in
-            btn.isHidden = true
+            sender?.isHidden = true
+            self.signupButton.isHidden = false
+            self.forgotPasswordButton.isHidden = false
         }
     }
 
+    @IBAction func doForgotPassword(_ sender: UIButton) {
+        self.animateButton(btn: sender)
+
+    }
 // MARK: - Private class helpers
 
     func isWithinScreenThreshold() -> Bool {
@@ -366,8 +382,51 @@ class SVLoginViewController: SVFormBaseViewController {
         return self.rePasswordTextField.superview!.alpha == 1
     }
 
+    func removeValidationError(textfield: UITextField) {
+        if _errorsList.contains(textfield) {
+            _errorsList.remove(at: _errorsList.index(of: textfield)!)
+        }
+
+        self.removeTextfieldDecoration(textfield: textfield)
+    }
+
     func validateTextfield(_ textfield: UITextField) -> Bool {
-        return true
+
+        if textfield.text?.range(of: " ") == nil {
+
+            if (textfield == self.usernameTextField && textfield.text!.characters.count > 3) ||
+                (textfield == self.passwordTextField && textfield.text!.characters.count > 5) {
+
+                self.removeValidationError(textfield: textfield)
+                self.showErrorMessage(show: _errorsList.count > 0)
+
+                return true
+
+            } else if textfield == self.rePasswordTextField {
+
+                if !self.isInSignUpView() {
+                    return true
+
+                } else if self.isInSignUpView() &&
+                    (textfield.text?.characters.count)! > 5 &&
+                    textfield.text! == self.passwordTextField.text! {
+
+                    self.removeValidationError(textfield: textfield)
+                    self.showErrorMessage(show: _errorsList.count > 0)
+
+                    return true
+                }
+            }
+        }
+
+        if !_errorsList.contains(textfield) {
+            _errorsList.append(textfield)
+        }
+
+        self.showErrorMessage(show: true)
+        self.showValidationErrorIn(textfield)
+        
+        return false
     }
 
     func showErrorMessage(show: Bool) {
@@ -400,13 +459,7 @@ class SVLoginViewController: SVFormBaseViewController {
 
         for field: UITextField in _inputFields {
             field.text = ""
-
-            guard let index = _errorsList.index(of: field) else {
-                return
-            }
-
-            _errorsList.remove(at:index)
-            self.removeTextfieldDecoration(textfield: field)
+            self.removeValidationError(textfield: field)
         }
 
         self.showErrorMessage(show: false)
@@ -418,12 +471,54 @@ class SVLoginViewController: SVFormBaseViewController {
     }
 
     func animateButton(btn: UIButton?) {
-        if btn?.superview is CSAnimationView {
-            guard let ani: CSAnimationView = btn?.superview as? CSAnimationView else {
-                return
+        if let springBtn = btn as? SpringButton {
+
+            springBtn.animation = Spring.AnimationPreset.Pop.rawValue
+            springBtn.curve = Spring.AnimationCurve.Spring.rawValue
+
+            springBtn.animate()
+
+        } else if let springView = btn?.superview as? SpringView {
+
+            springView.animation = Spring.AnimationPreset.Pop.rawValue
+            springView.curve = Spring.AnimationCurve.Spring.rawValue
+
+            springView.animate()
+        }
+    }
+
+    func checkToShowSubmitButton() -> Bool {
+
+        for field: UITextField in _inputFields {
+            _ = self.validateTextfield(field)
+        }
+
+        var shouldShowUp: Bool = false
+
+        if _errorsList.count == 0 {
+
+            if self.isInSignUpView() {
+                self.rePasswordButtonTrailingConstraint.constant = 0
+            } else {
+                self.passwordButtonTrailingConstraint.constant = 0
             }
 
-            ani.startCanvasAnimation()
+            shouldShowUp = true
+
+        } else {
+            if self.isInSignUpView() {
+                self.rePasswordButtonTrailingConstraint.constant = _defaultPasswordButtonTrailingConstraint
+            } else {
+                self.passwordButtonTrailingConstraint.constant = _defaultPasswordButtonTrailingConstraint
+            }
+
+            shouldShowUp = false
         }
+
+        UIView.animate(withDuration: 0.2) { 
+            self.view.layoutIfNeeded()
+        }
+
+        return shouldShowUp
     }
 }

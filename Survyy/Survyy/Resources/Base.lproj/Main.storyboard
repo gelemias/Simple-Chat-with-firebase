@@ -342,7 +342,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSb-JI-65w" customClass="SpringButton" customModule="Spring">
-                                <rect key="frame" x="77" y="350" width="55" height="31"/>
+                                <rect key="frame" x="77" y="350" width="49" height="33"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Light" family="Source Sans Pro" pointSize="16"/>
                                 <state key="normal" title="Sign up">
                                     <color key="titleColor" red="0.21176470589999999" green="0.26274509800000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -370,7 +370,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXa-yv-nQb" customClass="SpringButton" customModule="Spring">
-                                <rect key="frame" x="189" y="350" width="148" height="31"/>
+                                <rect key="frame" x="206" y="350" width="131" height="33"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Light" family="Source Sans Pro" pointSize="16"/>
                                 <state key="normal" title="Forgot my password">
                                     <color key="titleColor" red="0.36862745099999999" green="0.41176470590000003" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -472,7 +472,7 @@
         <scene sceneID="Tpv-jg-myc">
             <objects>
                 <navigationController id="sHi-sY-p00" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j0E-GB-SEL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="j0E-GB-SEL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -530,7 +530,7 @@
                                 <color key="currentPageIndicatorTintColor" red="0.12549019610000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gG4-PH-1sM" customClass="SpringButton" customModule="Spring">
-                                <rect key="frame" x="314.66666666666669" y="679.66666666666663" width="65" height="31"/>
+                                <rect key="frame" x="319.66666666666669" y="678.66666666666663" width="60" height="33"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Light" family="Source Sans Pro" pointSize="16"/>
                                 <state key="normal" title="Continue">
                                     <color key="titleColor" red="0.21176470589999999" green="0.26274509800000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

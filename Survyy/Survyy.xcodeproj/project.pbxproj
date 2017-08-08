@@ -27,6 +27,7 @@
 		C706EACE1F388BFE00FEC36A /* SourceSansPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C706EAC11F388BFE00FEC36A /* SourceSansPro-Semibold.otf */; };
 		C706EACF1F388BFE00FEC36A /* SourceSansPro-SemiboldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = C706EAC21F388BFE00FEC36A /* SourceSansPro-SemiboldIt.otf */; };
 		C706EAD11F38907B00FEC36A /* SVProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C706EAD01F38907B00FEC36A /* SVProgressHUD.swift */; };
+		C71B18AB1F39F6A700F2583D /* SVSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B18AA1F39F6A700F2583D /* SVSettingsManager.swift */; };
 		C75AF2741F3352BC00A39C27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C75AF2731F3352BC00A39C27 /* GoogleService-Info.plist */; };
 		C75AF2771F33571200A39C27 /* SVLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75AF2761F33571200A39C27 /* SVLoginManager.swift */; };
 		C75AF2791F3358B900A39C27 /* SVLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75AF2781F3358B900A39C27 /* SVLoginViewController.swift */; };
@@ -82,6 +83,7 @@
 		C706EAC11F388BFE00FEC36A /* SourceSansPro-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Semibold.otf"; sourceTree = "<group>"; };
 		C706EAC21F388BFE00FEC36A /* SourceSansPro-SemiboldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiboldIt.otf"; sourceTree = "<group>"; };
 		C706EAD01F38907B00FEC36A /* SVProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVProgressHUD.swift; sourceTree = "<group>"; };
+		C71B18AA1F39F6A700F2583D /* SVSettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVSettingsManager.swift; sourceTree = "<group>"; };
 		C75AF2731F3352BC00A39C27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C75AF2761F33571200A39C27 /* SVLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVLoginManager.swift; sourceTree = "<group>"; };
 		C75AF2781F3358B900A39C27 /* SVLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVLoginViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				C75AF2761F33571200A39C27 /* SVLoginManager.swift */,
+				C71B18AA1F39F6A700F2583D /* SVSettingsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				C798FDD81F334B680084AE39 /* SVRootViewController.swift in Sources */,
 				C706EAD11F38907B00FEC36A /* SVProgressHUD.swift in Sources */,
 				C798FDD61F334B680084AE39 /* AppDelegate.swift in Sources */,
+				C71B18AB1F39F6A700F2583D /* SVSettingsManager.swift in Sources */,
 				C7E6F0411F39993A005D35E6 /* SVCardView.swift in Sources */,
 				C75AF2791F3358B900A39C27 /* SVLoginViewController.swift in Sources */,
 			);

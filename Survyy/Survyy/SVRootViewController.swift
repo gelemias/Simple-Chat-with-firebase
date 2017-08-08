@@ -13,7 +13,6 @@ class SVRootViewController: SVBaseViewController {
     let kShowLoginSegue = "ShowLoginSegue"
     let kShowHomeSegue = "ShowHomeSegue"
     let kShowIntroSegue = "ShowIntroSegue"
-    let kShowFillUpSegue = "ShowFillUpSegue"
 
     override func viewWillAppear(_ animated: Bool) {
 
@@ -33,17 +32,12 @@ class SVRootViewController: SVBaseViewController {
 
         super.viewDidAppear(animated)
 
-        var shouldSkipIntro = false
-        if let shouldSkipIntroStoredVal = UserDefaults.standard.value(forKey: SVConstants.shouldSkipIntroKey) as? Bool {
-            shouldSkipIntro = shouldSkipIntroStoredVal
-        }
-
         // Login
         if !SVLoginManager.shared.isUserAuthorized() {
             self.performSegue(withIdentifier: kShowLoginSegue, sender: self)
         }
         // Intro
-        else if !shouldSkipIntro {
+        else if SVSettingsManager.sharedInstance.shouldSkipIntro == false {
             self.performSegue(withIdentifier: kShowIntroSegue, sender: self)
             UserDefaults.standard.setValue(true, forKey: SVConstants.shouldSkipIntroKey)
         }

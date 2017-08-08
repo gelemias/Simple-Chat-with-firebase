@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SVFormBaseViewController: UIViewController, UITextFieldDelegate {
+class SVFormBaseViewController: SVBaseViewController, UITextFieldDelegate {
 
     let kBorderWidth: Float = 3.0
 

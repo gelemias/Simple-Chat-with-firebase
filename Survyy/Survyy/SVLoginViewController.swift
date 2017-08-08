@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Spring
 
 class SVLoginViewController: SVFormBaseViewController {
 
@@ -466,23 +465,6 @@ class SVLoginViewController: SVFormBaseViewController {
         self.passwordButtonTrailingConstraint.constant = _defaultPasswordButtonTrailingConstraint
         UIView.animate(withDuration: 0.2) {
             self.view.layoutIfNeeded()
-        }
-    }
-
-    func animateButton(btn: UIButton?) {
-        if let springBtn = btn as? SpringButton {
-
-            springBtn.animation = Spring.AnimationPreset.Pop.rawValue
-            springBtn.curve = Spring.AnimationCurve.Spring.rawValue
-
-            springBtn.animate()
-
-        } else if let springView = btn?.superview as? SpringView {
-
-            springView.animation = Spring.AnimationPreset.Pop.rawValue
-            springView.curve = Spring.AnimationCurve.Spring.rawValue
-
-            springView.animate()
         }
     }
 

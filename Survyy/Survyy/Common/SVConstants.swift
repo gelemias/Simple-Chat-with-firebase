@@ -10,6 +10,10 @@ import UIKit
 
 struct SVConstants {
 
+    // User defaults
+
+    static let shouldSkipIntroKey = "shouldSkipIntroKey"
+
     // Colors
 
     static let lightBlue = "#02baf2"

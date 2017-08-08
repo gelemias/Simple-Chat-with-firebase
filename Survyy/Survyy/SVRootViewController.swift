@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SVRootViewController: UIViewController {
+class SVRootViewController: SVBaseViewController {
 
     let kShowLoginSegue = "ShowLoginSegue"
     let kShowHomeSegue = "ShowHomeSegue"
@@ -33,10 +33,23 @@ class SVRootViewController: UIViewController {
 
         super.viewDidAppear(animated)
 
+        var shouldSkipIntro = false
+        if let shouldSkipIntroStoredVal = UserDefaults.standard.value(forKey: SVConstants.shouldSkipIntroKey) as? Bool {
+            shouldSkipIntro = shouldSkipIntroStoredVal
+        }
+
+        // Login
         if !SVLoginManager.shared.isUserAuthorized() {
             self.performSegue(withIdentifier: kShowLoginSegue, sender: self)
-        } else {
+        }
+        // Intro
+        else if !shouldSkipIntro {
             self.performSegue(withIdentifier: kShowIntroSegue, sender: self)
+            UserDefaults.standard.setValue(true, forKey: SVConstants.shouldSkipIntroKey)
+        }
+        // Home
+        else {
+            self.performSegue(withIdentifier: kShowHomeSegue, sender: self)
         }
     }
 }

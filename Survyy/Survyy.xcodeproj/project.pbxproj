@@ -31,12 +31,15 @@
 		C75AF2771F33571200A39C27 /* SVLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75AF2761F33571200A39C27 /* SVLoginManager.swift */; };
 		C75AF2791F3358B900A39C27 /* SVLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75AF2781F3358B900A39C27 /* SVLoginViewController.swift */; };
 		C76A4E731F34819F0058F517 /* SVFormBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76A4E721F34819F0058F517 /* SVFormBaseViewController.swift */; };
-		C76A4E751F349D210058F517 /* SVSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76A4E741F349D210058F517 /* SVSignUpViewController.swift */; };
 		C798FDD61F334B680084AE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C798FDD51F334B680084AE39 /* AppDelegate.swift */; };
 		C798FDD81F334B680084AE39 /* SVRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C798FDD71F334B680084AE39 /* SVRootViewController.swift */; };
 		C798FDDD1F334B680084AE39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C798FDDC1F334B680084AE39 /* Assets.xcassets */; };
 		C798FDEB1F334B680084AE39 /* SurvyyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C798FDEA1F334B680084AE39 /* SurvyyTests.swift */; };
 		C798FDF61F334B680084AE39 /* SurvyyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C798FDF51F334B680084AE39 /* SurvyyUITests.swift */; };
+		C7E6F03F1F3992E8005D35E6 /* SVIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E6F03E1F3992E8005D35E6 /* SVIntroViewController.swift */; };
+		C7E6F0411F39993A005D35E6 /* SVCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E6F0401F39993A005D35E6 /* SVCardView.swift */; };
+		C7E6F0431F399AD0005D35E6 /* SVCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7E6F0421F399AD0005D35E6 /* SVCardView.xib */; };
+		C7E6F0451F39EE67005D35E6 /* SVBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E6F0441F39EE67005D35E6 /* SVBaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +86,6 @@
 		C75AF2761F33571200A39C27 /* SVLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVLoginManager.swift; sourceTree = "<group>"; };
 		C75AF2781F3358B900A39C27 /* SVLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVLoginViewController.swift; sourceTree = "<group>"; };
 		C76A4E721F34819F0058F517 /* SVFormBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVFormBaseViewController.swift; sourceTree = "<group>"; };
-		C76A4E741F349D210058F517 /* SVSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVSignUpViewController.swift; sourceTree = "<group>"; };
 		C798FDD21F334B680084AE39 /* Survyy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Survyy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C798FDD51F334B680084AE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C798FDD71F334B680084AE39 /* SVRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVRootViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,10 @@
 		C798FDF11F334B680084AE39 /* SurvyyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurvyyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C798FDF51F334B680084AE39 /* SurvyyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurvyyUITests.swift; sourceTree = "<group>"; };
 		C798FDF71F334B680084AE39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7E6F03E1F3992E8005D35E6 /* SVIntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVIntroViewController.swift; sourceTree = "<group>"; };
+		C7E6F0401F39993A005D35E6 /* SVCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVCardView.swift; sourceTree = "<group>"; };
+		C7E6F0421F399AD0005D35E6 /* SVCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SVCardView.xib; sourceTree = "<group>"; };
+		C7E6F0441F39EE67005D35E6 /* SVBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVBaseViewController.swift; sourceTree = "<group>"; };
 		DFD2F40363B44A3B79784EDB /* Pods-SurvyyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurvyyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SurvyyTests/Pods-SurvyyTests.release.xcconfig"; sourceTree = "<group>"; };
 		F3718BBEDEC475A05A49A305 /* Pods_SurvyyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurvyyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC4CF78DA416C52E8EEEB587 /* Pods-Survyy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survyy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Survyy/Pods-Survyy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +164,9 @@
 				C76A4E721F34819F0058F517 /* SVFormBaseViewController.swift */,
 				C706EAAA1F38782D00FEC36A /* SVConstants.swift */,
 				C706EAD01F38907B00FEC36A /* SVProgressHUD.swift */,
+				C7E6F0401F39993A005D35E6 /* SVCardView.swift */,
+				C7E6F0421F399AD0005D35E6 /* SVCardView.xib */,
+				C7E6F0441F39EE67005D35E6 /* SVBaseViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -234,7 +243,7 @@
 				C798FDD51F334B680084AE39 /* AppDelegate.swift */,
 				C798FDD71F334B680084AE39 /* SVRootViewController.swift */,
 				C75AF2781F3358B900A39C27 /* SVLoginViewController.swift */,
-				C76A4E741F349D210058F517 /* SVSignUpViewController.swift */,
+				C7E6F03E1F3992E8005D35E6 /* SVIntroViewController.swift */,
 			);
 			path = Survyy;
 			sourceTree = "<group>";
@@ -385,6 +394,7 @@
 				C706EACE1F388BFE00FEC36A /* SourceSansPro-Semibold.otf in Resources */,
 				C706EACB1F388BFE00FEC36A /* SourceSansPro-Light.otf in Resources */,
 				C706EACD1F388BFE00FEC36A /* SourceSansPro-Regular.otf in Resources */,
+				C7E6F0431F399AD0005D35E6 /* SVCardView.xib in Resources */,
 				C706EACA1F388BFE00FEC36A /* SourceSansPro-It.otf in Resources */,
 				C706EAC31F388BFE00FEC36A /* SIL Open Font License.txt in Resources */,
 				C706EAC81F388BFE00FEC36A /* SourceSansPro-ExtraLight.otf in Resources */,
@@ -474,6 +484,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
+				"${BUILT_PRODUCTS_DIR}/ZLSwipeableViewSwift/ZLSwipeableViewSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -482,6 +493,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZLSwipeableViewSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -591,13 +603,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C76A4E751F349D210058F517 /* SVSignUpViewController.swift in Sources */,
 				C75AF2771F33571200A39C27 /* SVLoginManager.swift in Sources */,
 				C706EAAB1F38782D00FEC36A /* SVConstants.swift in Sources */,
+				C7E6F0451F39EE67005D35E6 /* SVBaseViewController.swift in Sources */,
+				C7E6F03F1F3992E8005D35E6 /* SVIntroViewController.swift in Sources */,
 				C76A4E731F34819F0058F517 /* SVFormBaseViewController.swift in Sources */,
 				C798FDD81F334B680084AE39 /* SVRootViewController.swift in Sources */,
 				C706EAD11F38907B00FEC36A /* SVProgressHUD.swift in Sources */,
 				C798FDD61F334B680084AE39 /* AppDelegate.swift in Sources */,
+				C7E6F0411F39993A005D35E6 /* SVCardView.swift in Sources */,
 				C75AF2791F3358B900A39C27 /* SVLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

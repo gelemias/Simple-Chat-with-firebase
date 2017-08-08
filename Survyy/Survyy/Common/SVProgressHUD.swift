@@ -25,8 +25,7 @@ class SVProgressHUD: UIView {
         self.hud = MBProgressHUD.showAdded(to: self, animated: true)
         self.hud.animationType = .fade
         self.hud.mode = .customView
-        self.hud.dimBackground = true
-        self.hud.color = UIColor.white
+        self.hud.backgroundColor = UIColor.white
         self.hud.label.font = UIFont.init(name: "SourceSansPro-Regular", size: 18)
         self.hud.label.textColor = UIColor(hex:SVConstants.darkBlue)
         self.hud.label.text = text

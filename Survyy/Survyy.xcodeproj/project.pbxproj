@@ -37,6 +37,15 @@
 		C798FDDD1F334B680084AE39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C798FDDC1F334B680084AE39 /* Assets.xcassets */; };
 		C798FDEB1F334B680084AE39 /* SurvyyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C798FDEA1F334B680084AE39 /* SurvyyTests.swift */; };
 		C798FDF61F334B680084AE39 /* SurvyyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C798FDF51F334B680084AE39 /* SurvyyUITests.swift */; };
+		C7CF257E1F3AF68E004BE779 /* SVHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CF257D1F3AF68E004BE779 /* SVHomeViewController.swift */; };
+		C7CF25801F3AFBCA004BE779 /* SVSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CF257F1F3AFBCA004BE779 /* SVSettingsViewController.swift */; };
+		C7CF25821F3AFBD5004BE779 /* SVScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CF25811F3AFBD5004BE779 /* SVScanViewController.swift */; };
+		C7CF25841F3AFBE0004BE779 /* SVWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CF25831F3AFBE0004BE779 /* SVWalletViewController.swift */; };
+		C7CF25861F3AFBFB004BE779 /* SVChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CF25851F3AFBFB004BE779 /* SVChatViewController.swift */; };
+		C7CF25881F3B152B004BE779 /* SVTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CF25871F3B152B004BE779 /* SVTabBarView.swift */; };
+		C7CF258A1F3B1F93004BE779 /* SVNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CF25891F3B1F93004BE779 /* SVNavigationBarView.swift */; };
+		C7CF258D1F3B2F85004BE779 /* SVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CF258B1F3B2F85004BE779 /* SVTableViewCell.swift */; };
+		C7CF258E1F3B2F85004BE779 /* SVTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CF258C1F3B2F85004BE779 /* SVTableViewCell.xib */; };
 		C7E6F03F1F3992E8005D35E6 /* SVIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E6F03E1F3992E8005D35E6 /* SVIntroViewController.swift */; };
 		C7E6F0411F39993A005D35E6 /* SVCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E6F0401F39993A005D35E6 /* SVCardView.swift */; };
 		C7E6F0431F399AD0005D35E6 /* SVCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7E6F0421F399AD0005D35E6 /* SVCardView.xib */; };
@@ -99,6 +108,15 @@
 		C798FDF11F334B680084AE39 /* SurvyyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurvyyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C798FDF51F334B680084AE39 /* SurvyyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurvyyUITests.swift; sourceTree = "<group>"; };
 		C798FDF71F334B680084AE39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7CF257D1F3AF68E004BE779 /* SVHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVHomeViewController.swift; sourceTree = "<group>"; };
+		C7CF257F1F3AFBCA004BE779 /* SVSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVSettingsViewController.swift; sourceTree = "<group>"; };
+		C7CF25811F3AFBD5004BE779 /* SVScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVScanViewController.swift; sourceTree = "<group>"; };
+		C7CF25831F3AFBE0004BE779 /* SVWalletViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVWalletViewController.swift; sourceTree = "<group>"; };
+		C7CF25851F3AFBFB004BE779 /* SVChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVChatViewController.swift; sourceTree = "<group>"; };
+		C7CF25871F3B152B004BE779 /* SVTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVTabBarView.swift; sourceTree = "<group>"; };
+		C7CF25891F3B1F93004BE779 /* SVNavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVNavigationBarView.swift; sourceTree = "<group>"; };
+		C7CF258B1F3B2F85004BE779 /* SVTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVTableViewCell.swift; sourceTree = "<group>"; };
+		C7CF258C1F3B2F85004BE779 /* SVTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SVTableViewCell.xib; sourceTree = "<group>"; };
 		C7E6F03E1F3992E8005D35E6 /* SVIntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVIntroViewController.swift; sourceTree = "<group>"; };
 		C7E6F0401F39993A005D35E6 /* SVCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVCardView.swift; sourceTree = "<group>"; };
 		C7E6F0421F399AD0005D35E6 /* SVCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SVCardView.xib; sourceTree = "<group>"; };
@@ -169,6 +187,10 @@
 				C7E6F0401F39993A005D35E6 /* SVCardView.swift */,
 				C7E6F0421F399AD0005D35E6 /* SVCardView.xib */,
 				C7E6F0441F39EE67005D35E6 /* SVBaseViewController.swift */,
+				C7CF25871F3B152B004BE779 /* SVTabBarView.swift */,
+				C7CF25891F3B1F93004BE779 /* SVNavigationBarView.swift */,
+				C7CF258B1F3B2F85004BE779 /* SVTableViewCell.swift */,
+				C7CF258C1F3B2F85004BE779 /* SVTableViewCell.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -247,6 +269,11 @@
 				C798FDD71F334B680084AE39 /* SVRootViewController.swift */,
 				C75AF2781F3358B900A39C27 /* SVLoginViewController.swift */,
 				C7E6F03E1F3992E8005D35E6 /* SVIntroViewController.swift */,
+				C7CF257D1F3AF68E004BE779 /* SVHomeViewController.swift */,
+				C7CF257F1F3AFBCA004BE779 /* SVSettingsViewController.swift */,
+				C7CF25811F3AFBD5004BE779 /* SVScanViewController.swift */,
+				C7CF25831F3AFBE0004BE779 /* SVWalletViewController.swift */,
+				C7CF25851F3AFBFB004BE779 /* SVChatViewController.swift */,
 			);
 			path = Survyy;
 			sourceTree = "<group>";
@@ -399,6 +426,7 @@
 				C706EACD1F388BFE00FEC36A /* SourceSansPro-Regular.otf in Resources */,
 				C7E6F0431F399AD0005D35E6 /* SVCardView.xib in Resources */,
 				C706EACA1F388BFE00FEC36A /* SourceSansPro-It.otf in Resources */,
+				C7CF258E1F3B2F85004BE779 /* SVTableViewCell.xib in Resources */,
 				C706EAC31F388BFE00FEC36A /* SIL Open Font License.txt in Resources */,
 				C706EAC81F388BFE00FEC36A /* SourceSansPro-ExtraLight.otf in Resources */,
 				C75AF2741F3352BC00A39C27 /* GoogleService-Info.plist in Resources */,
@@ -608,6 +636,7 @@
 			files = (
 				C75AF2771F33571200A39C27 /* SVLoginManager.swift in Sources */,
 				C706EAAB1F38782D00FEC36A /* SVConstants.swift in Sources */,
+				C7CF257E1F3AF68E004BE779 /* SVHomeViewController.swift in Sources */,
 				C7E6F0451F39EE67005D35E6 /* SVBaseViewController.swift in Sources */,
 				C7E6F03F1F3992E8005D35E6 /* SVIntroViewController.swift in Sources */,
 				C76A4E731F34819F0058F517 /* SVFormBaseViewController.swift in Sources */,
@@ -615,7 +644,14 @@
 				C706EAD11F38907B00FEC36A /* SVProgressHUD.swift in Sources */,
 				C798FDD61F334B680084AE39 /* AppDelegate.swift in Sources */,
 				C71B18AB1F39F6A700F2583D /* SVSettingsManager.swift in Sources */,
+				C7CF25801F3AFBCA004BE779 /* SVSettingsViewController.swift in Sources */,
 				C7E6F0411F39993A005D35E6 /* SVCardView.swift in Sources */,
+				C7CF25881F3B152B004BE779 /* SVTabBarView.swift in Sources */,
+				C7CF25821F3AFBD5004BE779 /* SVScanViewController.swift in Sources */,
+				C7CF25861F3AFBFB004BE779 /* SVChatViewController.swift in Sources */,
+				C7CF258A1F3B1F93004BE779 /* SVNavigationBarView.swift in Sources */,
+				C7CF25841F3AFBE0004BE779 /* SVWalletViewController.swift in Sources */,
+				C7CF258D1F3B2F85004BE779 /* SVTableViewCell.swift in Sources */,
 				C75AF2791F3358B900A39C27 /* SVLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

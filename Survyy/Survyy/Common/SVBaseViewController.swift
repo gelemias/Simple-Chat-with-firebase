@@ -11,6 +11,12 @@ import Spring
 
 class SVBaseViewController: UIViewController {
 
+    override func viewWillAppear(_ animated: Bool) {
+
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
     func animateButton(btn: UIButton?) {
         if let springBtn = btn as? SpringButton {
 

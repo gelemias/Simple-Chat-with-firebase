@@ -39,8 +39,8 @@ class SVTabBarView: UIView {
         let gradient = CAGradientLayer()
         gradient.frame = path.bounds
 
-        gradient.colors = [UIColor(hex:"17EAD9").cgColor,
-                           UIColor(hex:"6078EA").cgColor]
+        gradient.colors = [UIColor(hex:SVConstants.leftGradientColor).cgColor,
+                           UIColor(hex:SVConstants.rightGradientColor).cgColor]
         gradient.locations = [0.0, 1.0]
         gradient.startPoint = CGPoint.init(x: 0, y: 0.5)
         gradient.endPoint = CGPoint.init(x: 1, y: 0.5)

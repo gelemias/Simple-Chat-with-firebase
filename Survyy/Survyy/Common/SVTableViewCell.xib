@@ -28,14 +28,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FlB-lD-acV">
-                        <rect key="frame" x="6" y="0.0" width="308" height="96"/>
+                        <rect key="frame" x="8" y="0.0" width="304" height="93.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2b-X7-mOf">
-                                <rect key="frame" x="0.0" y="0.0" width="308" height="92"/>
+                                <rect key="frame" x="0.0" y="0.0" width="304" height="89.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFi-zi-mdH">
                                         <rect key="frame" x="8" y="8" width="60" height="60"/>
-                                        <color key="backgroundColor" red="0.53511646639999999" green="0.91889148949999999" blue="0.51259258910000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.69803921570000005" green="0.77647058820000003" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="5Es-iO-oYc"/>
                                             <constraint firstAttribute="width" constant="60" id="mRV-8L-LMR"/>
@@ -43,13 +43,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fake business name inc." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lW7-we-CNH">
-                                        <rect key="frame" x="76" y="4" width="224" height="23"/>
+                                        <rect key="frame" x="76" y="4" width="220" height="23"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jjr-B5-TRn">
-                                        <rect key="frame" x="76" y="27" width="224" height="53"/>
+                                        <rect key="frame" x="76" y="27" width="220" height="53"/>
                                         <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit quam libero, vitae volutpat dolor ornare vel. Duis consequat lorem in imperdiet finibus.</string>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                         <nil key="textColor"/>
@@ -90,14 +90,17 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="FlB-lD-acV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="GFW-Jc-gcy"/>
-                    <constraint firstAttribute="trailing" secondItem="FlB-lD-acV" secondAttribute="trailing" constant="6" id="ZR6-Xp-Pc0"/>
-                    <constraint firstAttribute="bottom" secondItem="FlB-lD-acV" secondAttribute="bottom" constant="4" id="cCC-yI-s0Z"/>
-                    <constraint firstItem="FlB-lD-acV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="6" id="etA-aU-W9C"/>
+                    <constraint firstAttribute="trailing" secondItem="FlB-lD-acV" secondAttribute="trailing" constant="8" id="ZR6-Xp-Pc0"/>
+                    <constraint firstAttribute="bottom" secondItem="FlB-lD-acV" secondAttribute="bottom" constant="6" id="cCC-yI-s0Z"/>
+                    <constraint firstItem="FlB-lD-acV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="etA-aU-W9C"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="avatarView" destination="iFi-zi-mdH" id="6yx-dI-rFb"/>
                 <outlet property="containerView" destination="FlB-lD-acV" id="YWU-oN-yud"/>
+                <outlet property="descriptionLabel" destination="Jjr-B5-TRn" id="XcX-9c-afz"/>
+                <outlet property="titleLabel" destination="lW7-we-CNH" id="KBY-pk-ATo"/>
             </connections>
         </tableViewCell>
     </objects>

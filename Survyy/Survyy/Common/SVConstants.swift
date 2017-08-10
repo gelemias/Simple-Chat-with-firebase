@@ -10,6 +10,14 @@ import UIKit
 
 struct SVConstants {
 
+    // Font
+    static let SourceSansProRegular = "SourceSansPro-Regular"
+    static let SourceSansProBlack = "SourceSansPro-Black"
+    static let SourceSansProBold = "SourceSansPro-Bold"
+    static let SourceSansProExtraLight = "SourceSansPro-ExtraLight"
+    static let SourceSansProLight = "SourceSansPro-Light"
+    static let SourceSansProSemibold = "SourceSansPro-Semibold"
+
     // User defaults
 
     static let shouldSkipIntroKey = "shouldSkipIntroKey"
@@ -41,4 +49,7 @@ struct SVConstants {
     static let veryLightGrey = "#d6e1e5"
 
     static let backgroundGrey = "#f5f5f5"
+
+    static let leftGradientColor = "#17EAD9"
+    static let rightGradientColor = "#6078EA"
 }

@@ -32,6 +32,9 @@
 		C75AF2771F33571200A39C27 /* SVLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75AF2761F33571200A39C27 /* SVLoginManager.swift */; };
 		C75AF2791F3358B900A39C27 /* SVLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75AF2781F3358B900A39C27 /* SVLoginViewController.swift */; };
 		C76A4E731F34819F0058F517 /* SVFormBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76A4E721F34819F0058F517 /* SVFormBaseViewController.swift */; };
+		C77441211F3C5CF5007714A0 /* SVSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77441201F3C5CF5007714A0 /* SVSearchView.swift */; };
+		C77441231F3C5E3A007714A0 /* SVSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C77441221F3C5E3A007714A0 /* SVSearchView.xib */; };
+		C77441251F3C8974007714A0 /* SVChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77441241F3C8974007714A0 /* SVChatRoomViewController.swift */; };
 		C798FDD61F334B680084AE39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C798FDD51F334B680084AE39 /* AppDelegate.swift */; };
 		C798FDD81F334B680084AE39 /* SVRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C798FDD71F334B680084AE39 /* SVRootViewController.swift */; };
 		C798FDDD1F334B680084AE39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C798FDDC1F334B680084AE39 /* Assets.xcassets */; };
@@ -97,6 +100,9 @@
 		C75AF2761F33571200A39C27 /* SVLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVLoginManager.swift; sourceTree = "<group>"; };
 		C75AF2781F3358B900A39C27 /* SVLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVLoginViewController.swift; sourceTree = "<group>"; };
 		C76A4E721F34819F0058F517 /* SVFormBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVFormBaseViewController.swift; sourceTree = "<group>"; };
+		C77441201F3C5CF5007714A0 /* SVSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVSearchView.swift; sourceTree = "<group>"; };
+		C77441221F3C5E3A007714A0 /* SVSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SVSearchView.xib; sourceTree = "<group>"; };
+		C77441241F3C8974007714A0 /* SVChatRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVChatRoomViewController.swift; sourceTree = "<group>"; };
 		C798FDD21F334B680084AE39 /* Survyy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Survyy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C798FDD51F334B680084AE39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C798FDD71F334B680084AE39 /* SVRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVRootViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +197,8 @@
 				C7CF25891F3B1F93004BE779 /* SVNavigationBarView.swift */,
 				C7CF258B1F3B2F85004BE779 /* SVTableViewCell.swift */,
 				C7CF258C1F3B2F85004BE779 /* SVTableViewCell.xib */,
+				C77441201F3C5CF5007714A0 /* SVSearchView.swift */,
+				C77441221F3C5E3A007714A0 /* SVSearchView.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -274,6 +282,7 @@
 				C7CF25811F3AFBD5004BE779 /* SVScanViewController.swift */,
 				C7CF25831F3AFBE0004BE779 /* SVWalletViewController.swift */,
 				C7CF25851F3AFBFB004BE779 /* SVChatViewController.swift */,
+				C77441241F3C8974007714A0 /* SVChatRoomViewController.swift */,
 			);
 			path = Survyy;
 			sourceTree = "<group>";
@@ -424,6 +433,7 @@
 				C706EACE1F388BFE00FEC36A /* SourceSansPro-Semibold.otf in Resources */,
 				C706EACB1F388BFE00FEC36A /* SourceSansPro-Light.otf in Resources */,
 				C706EACD1F388BFE00FEC36A /* SourceSansPro-Regular.otf in Resources */,
+				C77441231F3C5E3A007714A0 /* SVSearchView.xib in Resources */,
 				C7E6F0431F399AD0005D35E6 /* SVCardView.xib in Resources */,
 				C706EACA1F388BFE00FEC36A /* SourceSansPro-It.otf in Resources */,
 				C7CF258E1F3B2F85004BE779 /* SVTableViewCell.xib in Resources */,
@@ -637,12 +647,14 @@
 				C75AF2771F33571200A39C27 /* SVLoginManager.swift in Sources */,
 				C706EAAB1F38782D00FEC36A /* SVConstants.swift in Sources */,
 				C7CF257E1F3AF68E004BE779 /* SVHomeViewController.swift in Sources */,
+				C77441211F3C5CF5007714A0 /* SVSearchView.swift in Sources */,
 				C7E6F0451F39EE67005D35E6 /* SVBaseViewController.swift in Sources */,
 				C7E6F03F1F3992E8005D35E6 /* SVIntroViewController.swift in Sources */,
 				C76A4E731F34819F0058F517 /* SVFormBaseViewController.swift in Sources */,
 				C798FDD81F334B680084AE39 /* SVRootViewController.swift in Sources */,
 				C706EAD11F38907B00FEC36A /* SVProgressHUD.swift in Sources */,
 				C798FDD61F334B680084AE39 /* AppDelegate.swift in Sources */,
+				C77441251F3C8974007714A0 /* SVChatRoomViewController.swift in Sources */,
 				C71B18AB1F39F6A700F2583D /* SVSettingsManager.swift in Sources */,
 				C7CF25801F3AFBCA004BE779 /* SVSettingsViewController.swift in Sources */,
 				C7E6F0411F39993A005D35E6 /* SVCardView.swift in Sources */,

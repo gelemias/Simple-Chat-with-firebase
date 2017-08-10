@@ -26,7 +26,7 @@ class SVCardView: UIView {
     init(frame: CGRect, title: String, description: String, cardView: UIView) {
         super.init(frame: frame)
 
-        if let contentView: UIView = Bundle.main.loadNibNamed("SVCardView", owner: self, options: nil)?.first! as? UIView {
+        if let contentView: UIView = Bundle.main.loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)?.first! as? UIView {
 
             view = contentView
             view.translatesAutoresizingMaskIntoConstraints = false

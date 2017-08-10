@@ -11,7 +11,7 @@ import UIKit
 class SVNavigationBarView: UIView {
 
     let imageSize: CGFloat = 50.0
-    let imageMargin: CGFloat = 4.0
+    let imageMargin: CGFloat = 2.0
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

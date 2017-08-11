@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class SVHomeViewController: SVBaseViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
 
@@ -17,6 +18,9 @@ class SVHomeViewController: SVBaseViewController, UITableViewDelegate, UITableVi
     private let defaultSearchViewTopConstraintValue: CGFloat! = -20
     private var isSearchViewVisible: Bool = true
     let discoverCellIdentifier = "DiscoverCellIdentifier"
+    let showHistorySegue = "ShowHistorySegue"
+
+    var dataSource = [SVBusinessItem]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +29,27 @@ class SVHomeViewController: SVBaseViewController, UITableViewDelegate, UITableVi
         self.tableView.dataSource = self
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: navBarView.frame.height * 2/3, right: 0)
         self.navBarView.shouldShowShadow(showShadow: false)
+
+        self.mockView()
+
+    }
+
+    func mockView() {
+        for i in 0...10 {
+            let item = SVBusinessItem(name: "Business " + String(i),
+                                      information: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit quam libero, amet, consectetur",
+                                      avatar: UIImageView(image:UIImage(named:"placeholder")), location: CLLocation(latitude: 0.0, longitude: 0.0))
+            self.dataSource.append(item)
+        }
     }
 
 // MARK: - Actions
 
-    @IBAction func goToChat(_ sender: UIButton) {
+    @IBAction func goToHistory(_ sender: UIButton) {
         self.animateButton(btn: sender)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.performSegue(withIdentifier: self.showHistorySegue, sender: self)
+        }
     }
 
     @IBAction func goToSettings(_ sender: UIButton) {
@@ -40,7 +59,7 @@ class SVHomeViewController: SVBaseViewController, UITableViewDelegate, UITableVi
 // MARK: - UITableView DataSource
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return dataSource.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,10 +67,12 @@ class SVHomeViewController: SVBaseViewController, UITableViewDelegate, UITableVi
             fatalError()
         }
 
-        cell.title = "Fake business name inc."
-        cell.subtitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit quam libero, vitae volutpat dolor ornare vel."
-        cell.avatar = UIImageView(image:UIImage(named:"placeholder"))
-        
+        let item = self.dataSource[indexPath.row]
+
+        cell.title = item.name
+        cell.subtitle = item.information
+        cell.avatar = item.avatar
+
         return cell
     }
 
@@ -60,6 +81,10 @@ class SVHomeViewController: SVBaseViewController, UITableViewDelegate, UITableVi
     }
 
 // MARK: - UITableView Delegate
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
+    }
 
 // MARK: - UIScrollView
 

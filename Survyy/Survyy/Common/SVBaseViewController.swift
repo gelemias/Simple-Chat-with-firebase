@@ -14,6 +14,8 @@ class SVBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.stylizeNavBar()
+
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"backgroundImage")!)
     }
 
     override func viewWillAppear(_ animated: Bool) {

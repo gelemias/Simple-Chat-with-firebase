@@ -84,10 +84,5 @@ class SVCardView: UIView {
         self.view.layer.shadowRadius = 10.0
         self.view.layer.shouldRasterize = true
         self.view.layer.rasterizationScale = UIScreen.main.scale
-
-        // Corner Radius
-        self.view.layer.cornerRadius = 10.0
-        self.container?.layer.cornerRadius = 10.0
     }
-
 }

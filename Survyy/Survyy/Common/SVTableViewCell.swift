@@ -19,7 +19,7 @@ class SVTableViewCell: UITableViewCell {
         didSet {
             self.avatarView.addSubview(avatar)
             avatar.frame = CGRect(x:0, y:0, width:self.avatarView.frame.width, height: self.avatarView.frame.height)
-            avatar.contentMode = .scaleAspectFill
+            avatar.contentMode = .scaleAspectFit
         }
     }
 
@@ -35,12 +35,37 @@ class SVTableViewCell: UITableViewCell {
         }
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    var reviewState: SVReviewState = .unknown {
+        didSet {
 
-        self.containerView.layer.cornerRadius = 4.0
-        self.containerView.subviews.first?.layer.cornerRadius = 4.0
+            var color = UIColor.clear
+            var width: CGFloat = 2.0
 
+            switch reviewState {
+            case .happy:
+                color = UIColor(hex:SVConstants.lightGreen)
+            case .normal: 
+                color = UIColor(hex:SVConstants.lightYellow)
+            case .bad:
+                color = UIColor(hex:SVConstants.lightRed)
+            default:
+                    width = 0.0
+                    color = UIColor.clear
+            }
+
+            self.avatarView.layer.borderWidth = width
+            self.avatarView.layer.borderColor = color.cgColor
+
+            if reviewState != .unknown {
+                let v = UIView(frame:CGRect(x:0, y:0, width:self.avatarView.frame.width, height: self.avatarView.frame.height))
+                v.backgroundColor = color
+                v.alpha = 0.6
+                self.avatarView.addSubview(v)
+            }
+        }
+    }
+
+    override func draw(_ rect: CGRect) {
         self.avatarView.layer.cornerRadius = self.avatarView.frame.width / 2
         self.avatarView.clipsToBounds = true
     }
@@ -50,5 +75,4 @@ class SVTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }

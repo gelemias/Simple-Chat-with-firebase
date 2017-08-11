@@ -34,7 +34,7 @@ class SVNavigationBarView: UIView {
         path.addLine(to: CGPoint(x: 0.0, y: height))
         path.close()
 
-        UIColor(hex:SVConstants.backgroundGrey).setFill()
+        UIColor(patternImage: UIImage(named:"backgroundImage")!).setFill()
 
         path.fill()
 

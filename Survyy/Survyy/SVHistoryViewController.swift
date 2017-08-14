@@ -86,6 +86,8 @@ class SVHistoryViewController: SVBaseViewController, UITableViewDelegate, UITabl
         let sectionDate = Array(self.dataSource.keys)[indexPath.section]
         let item: SVReviewedItem = self.dataSource[sectionDate]![indexPath.row]
 
+        cell.selectionStyle = .none
+
         cell.title = item.name
         cell.subtitle = item.information
         cell.avatar = item.avatar!

@@ -10,6 +10,7 @@ import UIKit
 
 class SVTableViewCell: UITableViewCell {
 
+    @IBOutlet private weak var edgeView: UIView!
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var avatarView: UIView!
     @IBOutlet private weak var titleLabel: UILabel!
@@ -73,6 +74,16 @@ class SVTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        if selected {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.containerView.backgroundColor = UIColor(hex:SVConstants.lightGrey)
+                self.containerView.alpha = 0.6
+            }) { (_) in
+                UIView.animate(withDuration: 0.1, animations: {
+                    self.containerView.backgroundColor = UIColor.white
+                    self.containerView.alpha = 1.0
+                })
+            }
+        }
     }
 }

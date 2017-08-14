@@ -27,6 +27,7 @@ class SVHomeViewController: SVBaseViewController, UITableViewDelegate, UITableVi
         self.tableView.register(UINib.init(nibName: "SVTableViewCell", bundle: nil), forCellReuseIdentifier: self.discoverCellIdentifier)
         self.tableView.delegate = self
         self.tableView.dataSource = self
+
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: navBarView.frame.height * 2/3, right: 0)
         self.navBarView.shouldShowShadow(showShadow: false)
 
@@ -68,6 +69,8 @@ class SVHomeViewController: SVBaseViewController, UITableViewDelegate, UITableVi
         }
 
         let item = self.dataSource[indexPath.row]
+
+        cell.selectionStyle = .none
 
         cell.title = item.name
         cell.subtitle = item.information

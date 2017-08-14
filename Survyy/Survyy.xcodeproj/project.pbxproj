@@ -42,6 +42,8 @@
 		C798FDF61F334B680084AE39 /* SurvyyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C798FDF51F334B680084AE39 /* SurvyyUITests.swift */; };
 		C7A8E7731F3DB017000448CA /* SVBusinessItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A8E7721F3DB017000448CA /* SVBusinessItem.swift */; };
 		C7A8E7751F3DC56F000448CA /* SVReviewedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A8E7741F3DC56F000448CA /* SVReviewedItem.swift */; };
+		C7B4AFE91F41822800E65A87 /* SVDetailBusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B4AFE71F41822800E65A87 /* SVDetailBusinessViewController.swift */; };
+		C7B4AFEA1F41822800E65A87 /* SVDetailBusinessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7B4AFE81F41822800E65A87 /* SVDetailBusinessViewController.xib */; };
 		C7CF257E1F3AF68E004BE779 /* SVHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CF257D1F3AF68E004BE779 /* SVHomeViewController.swift */; };
 		C7CF25801F3AFBCA004BE779 /* SVSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CF257F1F3AFBCA004BE779 /* SVSettingsViewController.swift */; };
 		C7CF25821F3AFBD5004BE779 /* SVScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CF25811F3AFBD5004BE779 /* SVScanViewController.swift */; };
@@ -117,6 +119,8 @@
 		C798FDF71F334B680084AE39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7A8E7721F3DB017000448CA /* SVBusinessItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVBusinessItem.swift; sourceTree = "<group>"; };
 		C7A8E7741F3DC56F000448CA /* SVReviewedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVReviewedItem.swift; sourceTree = "<group>"; };
+		C7B4AFE71F41822800E65A87 /* SVDetailBusinessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVDetailBusinessViewController.swift; sourceTree = "<group>"; };
+		C7B4AFE81F41822800E65A87 /* SVDetailBusinessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SVDetailBusinessViewController.xib; sourceTree = "<group>"; };
 		C7CF257D1F3AF68E004BE779 /* SVHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVHomeViewController.swift; sourceTree = "<group>"; };
 		C7CF257F1F3AFBCA004BE779 /* SVSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVSettingsViewController.swift; sourceTree = "<group>"; };
 		C7CF25811F3AFBD5004BE779 /* SVScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVScanViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 				C7CF25871F3B152B004BE779 /* SVTabBarView.swift */,
 				C7CF258B1F3B2F85004BE779 /* SVTableViewCell.swift */,
 				C7CF258C1F3B2F85004BE779 /* SVTableViewCell.xib */,
+				C7B4AFE71F41822800E65A87 /* SVDetailBusinessViewController.swift */,
+				C7B4AFE81F41822800E65A87 /* SVDetailBusinessViewController.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -438,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C706EAB31F38807100FEC36A /* LaunchScreen.storyboard in Resources */,
+				C7B4AFEA1F41822800E65A87 /* SVDetailBusinessViewController.xib in Resources */,
 				C706EAC41F388BFE00FEC36A /* SourceSansPro-Black.otf in Resources */,
 				C706EAC61F388BFE00FEC36A /* SourceSansPro-Bold.otf in Resources */,
 				C706EAC51F388BFE00FEC36A /* SourceSansPro-BlackIt.otf in Resources */,
@@ -663,6 +670,7 @@
 				C7E6F03F1F3992E8005D35E6 /* SVIntroViewController.swift in Sources */,
 				C76A4E731F34819F0058F517 /* SVFormBaseViewController.swift in Sources */,
 				C7A8E7731F3DB017000448CA /* SVBusinessItem.swift in Sources */,
+				C7B4AFE91F41822800E65A87 /* SVDetailBusinessViewController.swift in Sources */,
 				C798FDD81F334B680084AE39 /* SVRootViewController.swift in Sources */,
 				C706EAD11F38907B00FEC36A /* SVProgressHUD.swift in Sources */,
 				C7A8E7751F3DC56F000448CA /* SVReviewedItem.swift in Sources */,

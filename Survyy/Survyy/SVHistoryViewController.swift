@@ -123,5 +123,10 @@ class SVHistoryViewController: SVBaseViewController, UITableViewDelegate, UITabl
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
+
+        let vc = SVDetailBusinessViewController.init(nibName: "SVDetailBusinessViewController", bundle: nil)
+        let sectionDate = Array(self.dataSource.keys)[indexPath.section]
+        vc.businessItem = self.dataSource[sectionDate]![indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

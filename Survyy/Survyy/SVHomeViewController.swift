@@ -87,6 +87,10 @@ class SVHomeViewController: SVBaseViewController, UITableViewDelegate, UITableVi
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
+
+        let vc = SVDetailBusinessViewController.init(nibName: "SVDetailBusinessViewController", bundle: nil)
+        vc.businessItem = self.dataSource[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 // MARK: - UIScrollView

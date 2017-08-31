@@ -75,7 +75,12 @@ class SVSettingsViewController: SVBaseViewController, UITableViewDelegate, UITab
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let arr = sourcedata().value(forKey: sourceKey().object(at: section) as! String) as? NSArray else {
+
+        guard let key = sourceKey().object(at: section) as? String else {
+            fatalError()
+        }
+
+        guard let arr = sourcedata().value(forKey: key) as? NSArray else {
             fatalError()
         }
 
@@ -94,7 +99,11 @@ class SVSettingsViewController: SVBaseViewController, UITableViewDelegate, UITab
 
         cell?.backgroundColor = UIColor.white
 
-        guard let sectArray: NSArray = self.sourcedata().value(forKey: self.sourceKey().object(at: indexPath.section) as! String) as? NSArray else {
+        guard let key = sourceKey().object(at: indexPath.section) as? String else {
+            fatalError()
+        }
+
+        guard let sectArray: NSArray = self.sourcedata().value(forKey: key) as? NSArray else {
             fatalError()
         }
 

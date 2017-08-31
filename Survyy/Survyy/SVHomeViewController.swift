@@ -55,6 +55,20 @@ class SVHomeViewController: SVBaseViewController, UITableViewDelegate, UITableVi
 
     @IBAction func goToSettings(_ sender: UIButton) {
         self.animateButton(btn: sender)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+
+            let vc = SVSettingsViewController.init(nibName: "SVSettingsViewController", bundle: nil)
+            let transition = CATransition.init()
+
+            transition.duration = 0.45
+            transition.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
+            transition.type = kCATransitionPush
+            transition.subtype = kCATransitionFromLeft
+
+            self.navigationController?.view.layer.add(transition, forKey: kCATransition)
+            self.navigationController?.isNavigationBarHidden = false
+            self.navigationController?.pushViewController(vc, animated: false)
+        }
     }
 
 // MARK: - UITableView DataSource

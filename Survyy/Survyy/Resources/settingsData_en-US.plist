@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Account</key>
+	<array>
+		<string>Profile image</string>
+		<string>Username</string>
+		<string>Name</string>
+		<string>Lastname</string>
+		<string>Email</string>
+		<string>Log out</string>
+	</array>
+	<key>Interests</key>
+	<array>
+		<string>Add new tags</string>
+	</array>
+	<key>Notifications</key>
+	<array>
+		<string>Badges on app icon</string>
+		<string>Custom notifications</string>
+	</array>
+	<key>Privacy</key>
+	<array>
+		<string>Let others find my email</string>
+		<string>Block accounts</string>
+	</array>
+</dict>
+</plist>

@@ -20,6 +20,12 @@ class SVSettingsViewController: SVBaseViewController, UITableViewDelegate, UITab
         self.tableView.delegate = self
         self.tableView.separatorStyle = .none
         self.tableView.contentInset = UIEdgeInsets.init(top: -20, left: 0, bottom: -20, right: 0)
+
+        let editbutton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editTapped))
+        editbutton.setTitleTextAttributes([NSFontAttributeName: UIFont.init(name: "SourceSansPro-Regular", size: 16)!,
+                                           NSForegroundColorAttributeName: UIColor.black], for: .normal)
+
+        self.navigationItem.rightBarButtonItem = editbutton
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -28,6 +34,10 @@ class SVSettingsViewController: SVBaseViewController, UITableViewDelegate, UITab
     }
 
 // MARK: - Internal Methods
+
+    internal func editTapped() {
+
+    }
 
     private var _sourcedata: NSDictionary?
     internal func sourcedata() -> NSDictionary {
@@ -140,10 +150,13 @@ class SVSettingsViewController: SVBaseViewController, UITableViewDelegate, UITab
     }
 
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        if let header: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView {
-            header.textLabel?.textColor = UIColor.init(hex: SVConstants.veryDarkGrey)
-            header.textLabel?.font = UIFont.init(name: "SourceSansPro-Semibold", size: 16)
-            header.contentView.backgroundColor = UIColor.init(hex: SVConstants.backgroundGrey)
-        }
+        UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).textAlignment = .center
+        UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self]).font = UIFont.init(name: "SourceSansPro-Regular", size: 12)
+
+//        if let header: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView {
+//            header.textLabel?.textColor = UIColor.init(hex: SVConstants.veryDarkGrey)
+//            header.textLabel?.font = UIFont.init(name: "SourceSansPro-Semibold", size: 12)
+//            header.contentView.backgroundColor = UIColor.clear
+//        }
     }
 }

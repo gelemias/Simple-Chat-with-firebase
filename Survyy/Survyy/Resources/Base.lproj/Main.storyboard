@@ -473,7 +473,7 @@
         <scene sceneID="Tpv-jg-myc">
             <objects>
                 <navigationController id="sHi-sY-p00" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j0E-GB-SEL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="j0E-GB-SEL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

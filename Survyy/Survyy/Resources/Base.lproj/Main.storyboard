@@ -655,8 +655,53 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VR9-Q3-M3F" customClass="SVTabBarView" customModule="Survyy" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="676" width="414" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="ONy-ML-Rvt"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxZ-26-gJb">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFE-Iz-dJC">
+                                        <rect key="frame" x="106.66666666666666" y="10.666666666666629" width="23.999999999999972" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="ULW-vp-iXS"/>
+                                            <constraint firstAttribute="width" constant="24" id="dcO-l5-Nnv"/>
+                                        </constraints>
+                                        <state key="normal" image="profile-icon"/>
+                                        <connections>
+                                            <action selector="goProfile:" destination="0bP-qk-PSp" eventType="touchUpInside" id="Zkf-Mu-ZaA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Gk-MZ-596">
+                                        <rect key="frame" x="190.66666666666666" y="-4.3333333333333712" width="33" height="33"/>
+                                        <state key="normal" image="scan-icon"/>
+                                        <connections>
+                                            <action selector="goScan:" destination="0bP-qk-PSp" eventType="touchUpInside" id="V4j-7q-iGj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2o-ci-Qap">
+                                        <rect key="frame" x="283.66666666666669" y="10.666666666666629" width="24" height="24"/>
+                                        <state key="normal" image="wallet-icon"/>
+                                        <connections>
+                                            <action selector="goWallet:" destination="0bP-qk-PSp" eventType="touchUpInside" id="CL9-wK-Jny"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="l2o-ci-Qap" firstAttribute="height" secondItem="jFE-Iz-dJC" secondAttribute="height" id="0Wj-01-Cdb"/>
+                                    <constraint firstAttribute="height" constant="44" id="86A-nS-Ppb"/>
+                                    <constraint firstItem="l2o-ci-Qap" firstAttribute="width" secondItem="jFE-Iz-dJC" secondAttribute="width" id="A1o-1g-TxD"/>
+                                    <constraint firstItem="jFE-Iz-dJC" firstAttribute="centerY" secondItem="bxZ-26-gJb" secondAttribute="centerY" id="AfO-af-hNY"/>
+                                    <constraint firstItem="8Gk-MZ-596" firstAttribute="centerX" secondItem="bxZ-26-gJb" secondAttribute="centerX" id="BPL-J2-RnG"/>
+                                    <constraint firstItem="l2o-ci-Qap" firstAttribute="leading" secondItem="8Gk-MZ-596" secondAttribute="trailing" constant="60" id="Fev-HG-u9V"/>
+                                    <constraint firstItem="8Gk-MZ-596" firstAttribute="leading" secondItem="jFE-Iz-dJC" secondAttribute="trailing" constant="60" id="ZIV-Op-NxU"/>
+                                    <constraint firstItem="8Gk-MZ-596" firstAttribute="centerY" secondItem="bxZ-26-gJb" secondAttribute="centerY" constant="-10" id="Znp-Zk-tZV"/>
+                                    <constraint firstItem="l2o-ci-Qap" firstAttribute="top" secondItem="jFE-Iz-dJC" secondAttribute="top" id="bjZ-0M-apw"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -667,12 +712,15 @@
                             <constraint firstItem="Zwn-b6-o6f" firstAttribute="top" secondItem="mpC-mV-Tcv" secondAttribute="top" id="8KQ-Sa-hNK"/>
                             <constraint firstAttribute="trailing" secondItem="VR9-Q3-M3F" secondAttribute="trailing" id="CfX-0i-Wjf"/>
                             <constraint firstItem="VR9-Q3-M3F" firstAttribute="leading" secondItem="mpC-mV-Tcv" secondAttribute="leading" id="I5g-kn-bW2"/>
+                            <constraint firstItem="j5v-Dk-Mb4" firstAttribute="top" secondItem="bxZ-26-gJb" secondAttribute="bottom" id="IFQ-U2-322"/>
                             <constraint firstAttribute="trailing" secondItem="Zwn-b6-o6f" secondAttribute="trailing" id="Jbr-at-hKn"/>
                             <constraint firstItem="j5v-Dk-Mb4" firstAttribute="top" secondItem="VR9-Q3-M3F" secondAttribute="bottom" id="S6d-Wu-RkB"/>
                             <constraint firstAttribute="trailing" secondItem="hAE-1S-2UY" secondAttribute="trailing" id="gSc-xw-DTc"/>
                             <constraint firstItem="jrf-28-k26" firstAttribute="top" secondItem="Zwn-b6-o6f" secondAttribute="bottom" constant="-20" id="i2S-ST-eQZ"/>
                             <constraint firstAttribute="trailing" secondItem="jrf-28-k26" secondAttribute="trailing" constant="6" id="lYf-oO-2wt"/>
                             <constraint firstItem="hAE-1S-2UY" firstAttribute="top" secondItem="jrf-28-k26" secondAttribute="bottom" id="ooQ-PV-8p7"/>
+                            <constraint firstItem="bxZ-26-gJb" firstAttribute="leading" secondItem="mpC-mV-Tcv" secondAttribute="leading" id="q7O-kD-tm4"/>
+                            <constraint firstAttribute="trailing" secondItem="bxZ-26-gJb" secondAttribute="trailing" id="xmx-ap-SrU"/>
                             <constraint firstItem="jrf-28-k26" firstAttribute="leading" secondItem="mpC-mV-Tcv" secondAttribute="leading" constant="6" id="ynZ-sQ-Nud"/>
                             <constraint firstItem="j5v-Dk-Mb4" firstAttribute="top" secondItem="hAE-1S-2UY" secondAttribute="bottom" id="ysZ-gU-wff"/>
                         </constraints>
@@ -734,8 +782,11 @@
         <image name="history-icon" width="33" height="33"/>
         <image name="lock-icon" width="36" height="36"/>
         <image name="password-icon" width="36" height="36"/>
+        <image name="profile-icon" width="33" height="33"/>
+        <image name="scan-icon" width="33" height="33"/>
         <image name="settings-icon" width="33" height="33"/>
         <image name="survyy-app-logo2" width="166" height="166"/>
         <image name="username-icon" width="36" height="36"/>
+        <image name="wallet-icon" width="33" height="33"/>
     </resources>
 </document>

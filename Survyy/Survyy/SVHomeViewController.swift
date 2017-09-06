@@ -35,6 +35,33 @@ class SVHomeViewController: SVBaseViewController, UITableViewDelegate, UITableVi
 
     }
 
+// MARK: - Internal Methods
+
+    func bgGradient(frame: CGRect) -> CAGradientLayer {
+
+        let gradient = CAGradientLayer()
+        gradient.frame = frame
+
+        gradient.colors = [UIColor(hex:SVConstants.leftGradientColor).cgColor,
+        UIColor(hex:SVConstants.rightGradientColor).cgColor]
+        gradient.locations = [0.0, 1.0]
+        gradient.startPoint = CGPoint.init(x: 0, y: 0.5)
+        gradient.endPoint = CGPoint.init(x: 1, y: 0.5)
+
+        return gradient
+    }
+
+    func bottomToTopTransition() -> CATransition {
+        let transition = CATransition.init()
+
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
+        transition.type = kCATransitionReveal
+        transition.subtype = kCATransitionFromTop
+
+        return transition
+    }
+
     func mockView() {
         for i in 0...10 {
             let item = SVBusinessItem(name: "Business " + String(i),
@@ -60,7 +87,7 @@ class SVHomeViewController: SVBaseViewController, UITableViewDelegate, UITableVi
             let vc = SVSettingsViewController.init(nibName: "SVSettingsViewController", bundle: nil)
             let transition = CATransition.init()
 
-            transition.duration = 0.45
+            transition.duration = 0.5
             transition.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
             transition.type = kCATransitionPush
             transition.subtype = kCATransitionFromLeft
@@ -69,6 +96,39 @@ class SVHomeViewController: SVBaseViewController, UITableViewDelegate, UITableVi
             self.navigationController?.isNavigationBarHidden = false
             self.navigationController?.pushViewController(vc, animated: false)
         }
+    }
+
+    @IBAction func goProfile(_ sender: Any) {
+        print("profile")
+
+        let vc = UIViewController.init()
+        vc.view.layer.addSublayer(self.bgGradient(frame: self.view.frame))
+
+        self.navigationController?.view.layer.add(self.bottomToTopTransition(), forKey: kCATransition)
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+
+    @IBAction func goScan(_ sender: Any) {
+        print("scan")
+
+        let vc = UIViewController.init()
+        vc.view.layer.addSublayer(self.bgGradient(frame: self.view.frame))
+
+        self.navigationController?.view.layer.add(self.bottomToTopTransition(), forKey: kCATransition)
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+
+    @IBAction func goWallet(_ sender: Any) {
+        print("wallet")
+        
+        let vc = UIViewController.init()
+        vc.view.layer.addSublayer(self.bgGradient(frame: self.view.frame))
+
+        self.navigationController?.view.layer.add(self.bottomToTopTransition(), forKey: kCATransition)
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.pushViewController(vc, animated: false)
     }
 
 // MARK: - UITableView DataSource
